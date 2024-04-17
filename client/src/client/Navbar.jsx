@@ -4,19 +4,21 @@ import { NavLink } from "react-router-dom"
 
 function ClientNavbar(){
     return (
-        <div className="client-navbar">
-            <div className="nav-links-left">
-                <NavLink className="nav-link" to='Home'>Home</NavLink> 
+        <section className='h-wrapper'>
+            <div className="flexCenter h-container">
+                <img src="./e-hub logo.png" alt="logo" width={100} />
+                <div className="flexCenter h-menu">
+                    <NavLink className="client-nav-link" to='/client'>Home</NavLink> 
+                    <NavLink className="client-nav-link" to='/client/products'>Products</NavLink>
+                    <NavLink className="client-nav-link" to="/client/cart">Cart</NavLink>
+                    <NavLink className="client-nav-link" to="/client/order">Orders</NavLink>
+                    <NavLink className="client-nav-link" to="/client/logout">Logout</NavLink>
+                </div>
+
             </div>
-            <div className="nav-text">
-                <h1>E-Hub</h1>
-            </div>
-            <div className="nav-links-right">
-                <NavLink className="nav-link" to="Cart">Cart</NavLink>
-                <NavLink className="nav-link" to="Orders">Orders</NavLink>
-                <NavLink className="nav-link" to="Logout">Logout</NavLink>
-            </div>
-        </div>
+
+        </section>
+        
     )
 
 }

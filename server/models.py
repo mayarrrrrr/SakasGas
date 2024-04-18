@@ -16,7 +16,7 @@ class User(db.Model, SerializerMixin):
     products = db.relationship('Product', backref='seller', lazy=True, cascade="all, delete-orphan")
     orders = db.relationship('Order', backref='user', lazy=True, cascade="all, delete-orphan")
 
-    serialize_rules = ('-orders.user', '-orders.product',)
+    #serialize_rules = ('-orders.user', '-orders.product',)
 
 
     @validates('password')
@@ -48,7 +48,7 @@ class Product(db.Model, SerializerMixin):
     seller_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     orders = db.relationship('OrderItem', backref='product', lazy=True, cascade="all, delete-orphan")
 
-    serialize_rules = ('-order.product', '-order.user',)
+    #serialize_rules = ('-order.product', '-order.user',)
 
     def __repr__(self):
         return f'<Product {self.name} from seller {self.seller_id}>'
@@ -63,7 +63,7 @@ class Order(db.Model, SerializerMixin):
 
     order_items = db.relationship('OrderItem', backref='order', lazy=True, cascade="all, delete-orphan")
 
-    serialize_rules = ('-user.orders', '-product.orders',)
+    #serialize_rules = ('-user.orders', '-product.orders',)
 
     def __repr__(self):
         return f'<Order {self.id}>'
@@ -77,7 +77,7 @@ class OrderItem(db.Model, SerializerMixin):
     order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
 
-    serialize_rules = ('-order.order_items', '-product.orders',)
+    #serialize_rules = ('-order.order_items', '-product.orders',)
 
     def __repr__(self):
         return f'<OrderItem {self.id}>'

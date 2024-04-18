@@ -104,7 +104,7 @@ class Logout(Resource):
 
 class Users(Resource):
     def get(self):
-        users = [user.to_dict() for user in User.query.all()]
+        users = [user.to_dict(only=('id', 'username', 'email', 'role', )) for user in User.query.all()]
         print("im a user", users)
         return make_response(jsonify(users),200)
 
@@ -142,16 +142,13 @@ class UserByID(Resource):
         else:
             return make_response(jsonify({"error":"User not found"}),404) 
 
-#    PRODUCTS
+#  USER SIDE PRODUCTS
 
 class Products(Resource):
         def get(self):
-            products = [products.to_dict() for products in Product.query.all()]
+            products = [products.to_dict(only=('id', 'name', 'description', 'price', 'image_url','quantity_available','seller_id')) for products in Product.query.all()]
             return make_response(jsonify(products),200)
-
-   
-    
-        
+ 
 
 #  ORDERS
 
@@ -159,9 +156,10 @@ class Orders(Resource):
 
     @jwt_required()
     def get(self):
-        orders = [order.to_dict() for order in Order.query.all()]
+        orders = [order.to_dict(only=('id', 'total_price', 'status', 'user_id')) for order in Order.query.all()]
         return make_response(orders,200)
 
+    @jwt_required()
     def post(self):
 
         data = request.json
@@ -181,10 +179,9 @@ class Orders(Resource):
         return make_response(new_order.to_dict(),201)
     
 class Admin(Resource):
-    # def get(self):
-    #     products = [product.to_dict() for product in Product.query.all()]
-
-    #     return make_response(products,200)
+    def get(self):
+        products = [product.to_dict(only=('id', 'name', 'description', 'price', 'image_url','quantity_available',)) for product in Product.query.all()]
+        return make_response(products,200)
     
     def post(self):
         data = request.json

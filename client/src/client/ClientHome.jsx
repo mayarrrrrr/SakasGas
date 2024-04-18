@@ -54,7 +54,7 @@ function ClientHome(){
                 </div>
                 <div className="flexCenter hero-right">
                     <div className="image-container">
-                        <img src="./hero.jpeg" alt="" />
+                        <img src="./contactUs.jpeg" alt="" />
 
                     </div>
                 </div>
@@ -85,7 +85,7 @@ function ClientHome(){
                 <div className="paddings innerWidth flexCenter c-container">
                     <div className="c-left">
                         <div className="c-image-container">
-                            <img src="./contactUs.jpeg" alt="" />
+                            <img src="./hero.jpeg" alt="" />
                         </div>
                     </div>
                     {/*Right side */}

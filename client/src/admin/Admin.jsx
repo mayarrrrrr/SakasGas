@@ -1,10 +1,16 @@
 import AdminNavbar from "./Navbar"
+import { Outlet, useLocation } from "react-router-dom"
+import AdminHome from "./AdminHome";
 
 function Admin(){
+    const location = useLocation();
+
+    const renderHomePage = location.pathname === '/admin';
     return (
         <div>
             <AdminNavbar/>
-            <h1>Admin Home Page</h1>
+            {renderHomePage && <AdminHome/>}
+            <Outlet /> 
         </div>
     )
 

@@ -9,6 +9,7 @@ import ClientProducts from './client/ClientProducts';
 import ClientCart from './client/ClientCart';
 import ClientCheckout from './client/ClientCheckout';
 import ClientOrder from './client/ClientOrder';
+import AdminOrder from './admin/AdminOrder';
 
 function App() {
 
@@ -18,7 +19,9 @@ function App() {
       <Routes>
         <Route path='/register' element={<Register/>}>Register</Route>
         <Route path='/login' element={<Login/>}>Login</Route>
-        <Route path='/admin' element={<Admin/>}>Admin</Route>
+        <Route path='/admin' element={<Admin/>}>
+          <Route path='orders' element={<AdminOrder/>}></Route>
+        </Route>
         <Route path='/client' element={<Client/>}>
           <Route path="products" element={<ClientProducts />} />
           <Route path="cart" element={<ClientCart />} />

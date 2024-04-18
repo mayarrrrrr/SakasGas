@@ -92,6 +92,9 @@ class UserLogin(Resource):
         })
     
 
+
+
+
 class Logout(Resource):
     @jwt_required()
     def post(self):

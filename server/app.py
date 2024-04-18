@@ -105,6 +105,7 @@ class Logout(Resource):
 class Users(Resource):
     def get(self):
         users = [user.to_dict() for user in User.query.all()]
+        print("im a user", users)
         return make_response(jsonify(users),200)
 
 

@@ -48,7 +48,7 @@ class Product(db.Model, SerializerMixin):
     seller_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     orders = db.relationship('OrderItem', backref='product', lazy=True, cascade="all, delete-orphan")
 
-    serialize_rules = ('-orders.product', '-orders.user',)
+    serialize_rules = ('-order.product', '-order.user',)
 
     def __repr__(self):
         return f'<Product {self.name} from seller {self.seller_id}>'

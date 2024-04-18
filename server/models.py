@@ -14,6 +14,7 @@ class User(db.Model):
     products = db.relationship('Product', backref='seller', lazy=True)
     orders = db.relationship('Order', backref='user', lazy=True)
 
+
     @validates('password')
     def validate_password(self, key, password):
         if len(password) < 8:

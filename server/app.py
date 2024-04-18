@@ -11,10 +11,11 @@ app = Flask(__name__)
 CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 app.json.compact = False
 
 app.secret_key = 'secret key'
-app.config['JWT_SECRET_KEY'] = 'this-is-secret-key'
+app.config['JWT_SECRET_KEY'] = "b'\x03\xa3\x8c\xb3\n\xf4}\x16aFh\xc5'"
 
 db.init_app(app)
 

@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import validates
 
 db= SQLAlchemy()
 
@@ -12,6 +13,19 @@ class User(db.Model):
 
     products = db.relationship('Product', backref='seller', lazy=True)
     orders = db.relationship('Order', backref='user', lazy=True)
+
+    @validates('password')
+    def validate_password(self, key, password):
+        if len(password) < 8:
+            raise ValueError('Password must be more than 8 characters.')
+        return password
+    
+    @validates('email')
+    def validate_email(self, key, email):
+        if not email.endswith("@gmail.com"):
+            raise ValueError("Email is not valid. It should end with @gmail.com")
+        return email
+
 
     def __repr__(self):
         return f'<User {self.email} of role {self.role}>'

@@ -10,8 +10,8 @@ function ClientProducts(){
         fetch("http://127.0.0.1:5555/products")
           .then(resp => resp.json())
           .then((data) => {
+            //console.log(data)
             setProducts(data);
-            //console.log("Fetched jewelry data:", data); // Log the fetched data
           })
           .catch(error => {
             console.error('Error fetching products data:', error);

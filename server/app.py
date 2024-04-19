@@ -150,14 +150,46 @@ class Products(Resource):
             return make_response(jsonify(products),200)
  
 
-#  ORDERS
+#  CLIENT ORDERS
 
 class Orders(Resource):
 
-    @jwt_required()
+   # @jwt_required()
+   # def get(self):
+   #     orders = [order.to_dict(only=('id', 'total_price', 'status', 'user_id',)) for order in Order.query.all()]
+   #     return make_response(jsonify(orders),200)
+    """
     def get(self):
-        orders = [order.to_dict(only=('id', 'total_price', 'status', 'user_id')) for order in Order.query.all()]
-        return make_response(orders,200)
+        orders_data = []
+        orders = Order.query.all()
+        for order in orders:
+            for order_item in order.order_items:
+                order_info = {}
+                order_info['product_name'] = order_item.product.name
+                order_info['total_price'] = order.total_price
+                order_info['quantity'] = order_item.quantity
+                order_info['status'] = order.status
+                order_info['order_id'] = order_item.order_id
+                orders_data.append(order_info)
+        return jsonify(orders_data)
+    """
+
+    def get(self):
+        orders = Order.query.all()
+        aggregated_orders = []
+
+        for order in orders:
+            order_details = {
+                'order_id': order.id,
+                'status': order.status,
+                'total_price': float(sum(item.product.price * item.quantity for item in order.order_items)),
+                'products': [{'name': item.product.name, 'quantity': item.quantity} for item in order.order_items]
+            }
+            aggregated_orders.append(order_details)
+
+       # print(aggregated_orders)
+        
+        return make_response(aggregated_orders, 200)
 
     @jwt_required()
     def post(self):

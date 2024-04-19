@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './clientProducts.css'
+import { cartContext } from "../context/Context";
 
 function ClientProducts(){
     const [products, setProducts] = useState([]);
@@ -17,6 +18,10 @@ function ClientProducts(){
           });
       }, []);
 
+    const globalState = useContext(cartContext)
+    const dispatch = globalState.dispatch
+    //console.log(globalState)
+
     return (
         <div className='client-products'>
             <div className="flexColStart p-head">
@@ -33,8 +38,10 @@ function ClientProducts(){
                 </select>
             </div>
             <div className="client-products-container">
-                {products.map((products, index) => (
-                    <div className="flexColStart p-card" key={products.index}>
+                {products.map((products, index) => {
+                    products.quantity= 1
+                    return (
+                    <div className="flexColStart p-card" key={products.id}>
                         <img src={products.image_url} alt="category"/>
                         <span className="secondaryText p-price">
                             <span style={{color:"orange"}}>$</span>
@@ -42,11 +49,11 @@ function ClientProducts(){
                         </span>
                         <span className='primaryText'>{products.name}</span>
                         <span className='secondaryText'>{products.description}</span>
-                        <button className="p-buttons">Add to cart</button>
+                        <button className="p-buttons" onClick={() => dispatch({type:'ADD', payload:products})}>Add to cart</button>
                     </div>
-                ))}
+                )})}
             </div>
-        </div>
+         </div>
     )
 
 }

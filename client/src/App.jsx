@@ -7,7 +7,6 @@ import Admin from './admin/Admin';
 import Client from './client/Client';
 import ClientProducts from './client/ClientProducts';
 import ClientCart from './client/ClientCart';
-import ClientCheckout from './client/ClientCheckout';
 import ClientOrder from './client/ClientOrder';
 import AdminOrder from './admin/AdminOrder';
 
@@ -25,8 +24,8 @@ function App() {
         <Route path='/client' element={<Client/>}>
           <Route path="products" element={<ClientProducts />} />
           <Route path="cart" element={<ClientCart />} />
-          <Route path="checkout" element={<ClientCheckout />} />
           <Route path="order" element={<ClientOrder />} />
+          {/*add logout*/}
         </Route>
         <Route path="*" element={<Navigate to="/register" />} />
       </Routes>

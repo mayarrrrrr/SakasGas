@@ -163,20 +163,37 @@ class Orders(Resource):
     def post(self):
 
         data = request.json
+        current_user_id = get_jwt_identity()
 
         try:
             new_order = Order(
-                quantity = data["quantity"],
-                user_id = data["user_id"],
-                product_id = data["product_id"]
+                #quantity = data["quantity"],
+                #user_id = data["user_id"],
+                #product-id = data['product_id']
+                user_id=current_user_id,
+                total_price=data["total"],
+                status="pending"
             )
-            db.session.add(new_order)
-            db.session.commit() 
+            # incase of a list of items 
+            for item in data["items"]:
+                order_item = OrderItem(
+                    product_id=item["id"],
+                    quantity=item["quantity"]
+                )
+                new_order.order_items.append(order_item)
 
-        except ValueError:
-            return make_response(jsonify({"error":["validation errors"]}))
+            db.session.add(new_order)
+            db.session.commit()
+            return make_response(new_order.to_dict(), 201)
+
+        except Exception as e:
+            db.session.rollback()
+            return make_response(jsonify({"error": str(e)}), 400) 
+
+        #except ValueError:
+        #    return make_response(jsonify({"error":["validation errors"]}))
         
-        return make_response(new_order.to_dict(),201)
+        #return make_response(new_order.to_dict(),201)
     
 class Admin(Resource):
     def get(self):

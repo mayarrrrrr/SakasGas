@@ -8,15 +8,24 @@ import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
 import 'swiper/css';
 import data from '../../slider.json'
 import { sliderSettings } from './Common';
+import { NavLink } from 'react-router-dom'
+import {motion } from 'framer-motion'
 
 function ClientHome(){
     return(
-        <section className='hero-wrapper'>
+         <section className='hero-wrapper'>
             <div className="paddings innerWidth flexCenter hero-container ">
                 <div className="flexColStart hero-left">
                     <div className="hero-title">
                         <div className="orange-circle"/>
-                        <h1>Elevate <br /> Your Digital <br />Lifestyle </h1>
+                        <motion.h1 
+                        initial={{y:"2rem", opacity:0}}
+                        animate={{y:0, opacity: 1}}
+                        transition={{duration:2, type:"spring"}}>
+                            Elevate <br /> 
+                            Your Digital <br />
+                            Lifestyle 
+                        </motion.h1>
                     </div>
                     <div className="flexColStart hero-des">
                         <span className='secondaryText'>From cutting-edge gadgets to must-have accessories</span>
@@ -53,10 +62,14 @@ function ClientHome(){
                     </div>
                 </div>
                 <div className="flexCenter hero-right">
-                    <div className="image-container">
+                    <motion.div 
+                    initial={{x: "7rem", opacity:0}}
+                    animate={{x:0, opacity:1}}
+                    transition={{duration:2, type:"spring"}}
+                    className="image-container">
                         <img src="./contactUs.jpeg" alt="" />
 
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <div className="r-wrapper">
@@ -159,6 +172,39 @@ function ClientHome(){
                     
                 </div>
             </div>
+            <div className="g-wrapper">
+                <div className="paddings innerWidth g-container">
+                    <div className="flexColCenter g-inner-container">
+                        <span className='primaryText'>Get Started with E-Hub</span>
+                        <span className='secondaryText'>Discover unbeatable discounts on a wide range of products</span>
+                        <span>Explore our extensive collection</span>
+                        <button className='button'>
+                            <NavLink to='/register'>Get Started</NavLink>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className="f-wrapper">
+                <div className="paddings innerWidth flexCenter f-contain">
+                    {/*left side*/}
+                    <div className="flexColStart f-left">
+                        <img src="./e-hub logo.png" alt="" width={50} />
+                        <span className="secondaryText">Our vision is to redefine your shopping experience,<br/> offering unbeatable convenience and value to you.</span>
+                    </div>
+                    <div className="flexColStart f-right">
+                        <span className='primaryText'>Information</span>
+                        <span className='secondaryText'>15 Bowery St, Kitt Lane</span>
+                        <div className="flexCenter f-menu">
+                            <span>Home</span>
+                            <span>Products</span>
+                            <span>Cart</span>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             
         </section>
     )

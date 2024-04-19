@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .bodyReg {
+    background-image: url('../registration.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .welcome-text {
+    flex: 1;
+    padding: 20px;
+    font-size: 25px; 
+    letter-spacing: 10px; 
+    font-weight: 500;
+    color: black;
+  }
+  
+  .form-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: black;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: black;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    letter-spacing: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  NavLink {
+    color: #053466;
+    text-decoration: none;
+  }
+  
+  NavLink:hover {
+    text-decoration: underline;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    
+    .welcome-text {
+      font-size: 20px; 
+      letter-spacing: 5px;
+      text-align: center;
+    }
+    
+    .form-container {
+      width: 90%;
+      max-width: 400px;
+    }
+    
+    .form-control {
+      font-size: 16px;
+    }
+  }
+  

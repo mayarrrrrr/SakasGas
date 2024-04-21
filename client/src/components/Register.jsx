@@ -58,33 +58,33 @@ function Register() {
                 <form method="POST">
                     <div className="form-group">
                         <label htmlFor="username">User Name</label>
-                        <input type="text" className="form-control" id="username" name="username" placeholder="Enter username" value={user.username} onChange={handleInputs} />
+                        <input type="text" className="form-control" id="username" name="username" placeholder="Enter Username" value={user.username} onChange={handleInputs} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input type="email" className="form-control" id="email" name="email" placeholder="Enter your Email" value={user.email} onChange={handleInputs} />
+                        <input type="email" className="form-control" id="email" name="email" placeholder="Enter Email" value={user.email} onChange={handleInputs} />
                     </div>
                     
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" className="form-control" id="password" name="password"  placeholder="Enter your Password" value={user.password} onChange={handleInputs}/>
+                        <input type="password" className="form-control" id="password" name="password"  placeholder="Enter Password" value={user.password} onChange={handleInputs}/>
                     </div>
                     
                     <div className="form-group">
-                        <label htmlFor="confirmPassword">Confirm password</label>
-                        <input type="password" className="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" value={user.confirmPassword} onChange={handleInputs}/>
+                        <label htmlFor="confirmPassword">Confirm Password</label>
+                        <input type="password" className="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" value={user.confirmPassword} onChange={handleInputs}/>
                     </div>
                     
                     <div className="form-group">
-                        <label htmlFor="role">User Role</label>
+                        <label htmlFor="role">Role</label>
                         <select className="form-control" id="role" name="role" value={user.role} onChange={handleInputs}>
                             <option value="client">Client</option>
                             <option value="admin">Admin</option>
                         </select>
                     </div>
                     
-                    <NavLink to='/login'>Already Registered? Log in!</NavLink><br /> <br />
+                    <span>Already Registered? </span><NavLink to='/login'>Log in</NavLink><br /> <br />
                     <button type="submit" className="btn btn-primary" id="register" name="register" onClick={postData}>Register</button>
                 </form>
             </div>

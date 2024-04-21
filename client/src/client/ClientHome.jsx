@@ -31,9 +31,9 @@ function ClientHome(){
                         <span className='secondaryText'>From cutting-edge gadgets to must-have accessories</span>
                         <span className='secondaryText'>Explore a world of high-quality electronics at your fingertips. </span>
                     </div>
-                    <div className="flexCenter search-bar">
+                    <div className="flexCenter client-search-bar">
                         <HiLocationMarker color="var(--blue)" size={25}/>
-                        <input type="text" />
+                        <input type="text"/>
                         <button className='button'>Search</button>
                     </div>
                     <div className="flexCenter stats">

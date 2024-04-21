@@ -1,6 +1,7 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import './clientCart.css';
 import { cartContext } from '../context/Context';
+import { NavLink } from "react-router-dom"
 
 function ClientCart() {
     const globalState = useContext(cartContext);
@@ -50,49 +51,66 @@ function ClientCart() {
     };
 
     return (
-        <div className="client-cart">
-            {state.map((item, index) => {
-                return (
-                    <div className="client-cart-card" key={index}>
-                        <img src={item.image_url} alt="" />
-                        <p>{item.name}</p>
-                        <p>{item.quantity * item.price}</p>
-                        <div className="quantity">
-                            <button onClick={() => dispatch({ type: 'INCREASE', payload: item })}>+</button>
-                            <p>{item.quantity}</p>
-                            <button
-                                onClick={() => {
-                                    if (item.quantity > 1) {
-                                        dispatch({ type: 'DECREASE', payload: item });
-                                    } else {
-                                        dispatch({ type: 'REMOVE', payload: item });
-                                    }
-                                }}
-                            >
-                                -
-                            </button>
-                        </div>
-                        <h2 onClick={() => dispatch({ type: 'REMOVE', payload: item })}>X</h2>
-                    </div>
-                );
-            })}
-            {state.length > 0 && (
-                <div className="total">
-                    <h3>Subtotal</h3>
-                    <h2>${total}</h2>
-                </div>
-            )}
-            {error && <p className="error">{error}</p>}
-            {loading ? (
-                <p>Loading...</p>
+        <div className="client-cart-page">
+            {state.length === 0 ? (
+                <h2>Your cart is empty</h2>
             ) : (
-                <div className="checkout-button">
-                    <button onClick={handlePlaceOrder}>Place Order</button>
-                </div>
+                <>
+                    <h2>Shopping Cart</h2>
+                    <div className="client-cart">
+                        <div className="client-cart-titles">
+                            <h4>Product</h4>
+                            <h4>Price</h4>
+                            <h4>Quantity</h4>
+                            <h4>Total</h4>
+                        </div>
+                        {state.map((item, index) => {
+                            return (
+                                <div className="client-cart-card" key={index}>
+                                    <div className="product-details">
+                                        <img src={item.image_url} alt={item.name} />
+                                        <div className="product-name">
+                                            <p>{item.name}</p>
+                                            <button onClick={() => dispatch({ type: 'REMOVE', payload: item })}>Remove</button>
+                                        </div>   
+                                    </div>
+                                    <p>${item.price}</p>
+                                    <div className="quantity">
+                                        <button onClick={() => {
+                                            if (item.quantity > 1) {
+                                                dispatch({ type: 'DECREASE', payload: item });
+                                            } else {
+                                                dispatch({ type: 'REMOVE', payload: item });
+                                            }
+                                        }}>-</button>
+                                        <span>{item.quantity}</span>
+                                        <button onClick={() => dispatch({ type: 'INCREASE', payload: item })}>+</button>
+                                    </div>
+                                    <p className='total-price'>${item.quantity * item.price}</p>
+                                </div>
+                            );
+                        })}
+                        <div className="total">
+                            <h4>Subtotal</h4>
+                            <h4>${total}</h4>
+                        </div>
+                        <div className="checkout-button">
+                            <button className='button' onClick={handlePlaceOrder}>Checkout</button>
+                        </div>
+                        <div className="continue-shopping">
+                            <NavLink className="client-nav-link" to='/client/products'> Continue Shopping</NavLink>
+                        </div>
+                    </div>
+                </>
             )}
-            {success && <p className="success">Order placed successfully!</p>}
         </div>
     );
 }
 
 export default ClientCart;
+
+
+
+
+
+

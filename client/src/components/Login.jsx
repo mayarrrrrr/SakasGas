@@ -52,47 +52,32 @@ function Login() {
     <>
       <section>
        <div className="containerLog">
+        <div class="circle"></div>
+        <div class="circle"></div>
        <div className="glass-form-container">
+        <h2>Welcome Back!</h2>
+        <p>Login to your account</p>
           <div className="form-box">
             <form method="POST">
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your Email"
-                  value={email}
+                  type="email" className="form-control" id="email" name="email" placeholder="Enter Email" value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  name="password"
-                  placeholder="Enter your Password"
-                  value={password}
+                <input type="password" className="form-control" id="password" name="password" placeholder="Enter Password" value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-
-              <NavLink to="/register">No account? register here!</NavLink>
-              <br />
-              <br />
-              <button
-                type="submit"
-                className="btn btn-primary"
-                id="login"
-                name="login"
-                onClick={setData}
-              >
+              <button type="submit" className="btn btn-primary" id="login" name="login" onClick={setData}>
                 Login
               </button>
+              <br />
+              <span className="register-span">New to E-Hub? </span><NavLink to="/register">Register here</NavLink>
             </form>
           </div>
         </div>

@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, make_response
 from flask_migrate import Migrate
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, reqparse
 from models import db, User, Order, OrderItem, Product
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity, create_access_token,unset_jwt_cookies
 from flask_cors import CORS, cross_origin
@@ -142,7 +142,7 @@ class UserByID(Resource):
         else:
             return make_response(jsonify({"error":"User not found"}),404) 
 
-#  USER SIDE PRODUCTS
+#  CLIENT SIDE PRODUCTS
 
 class Products(Resource):
         def get(self):
@@ -227,7 +227,48 @@ class Orders(Resource):
         
         #return make_response(new_order.to_dict(),201)
     
-class Admin(Resource):
+
+class AdminOrders(Resource):
+    def get(self):
+        orders_data = []
+        orders = Order.query.all()
+        for order in orders:
+            for order_item in order.order_items:
+                order_info = {}
+                order_info['product_name'] = order_item.product.name
+                order_info['total_price'] = order.total_price
+                order_info['user_id'] = order.user_id
+                order_info['quantity'] = order_item.quantity
+                order_info['status'] = order.status
+                order_info['order_id'] = order_item.order_id
+                product_price = order_item.product.price
+                order_info['product_price'] = product_price
+                product_id = order_item.product.id
+                order_info['product_id'] = product_id
+                orders_data.append(order_info)
+        return jsonify(orders_data)
+
+"""
+# put/patch order status from pending to approved/dispatched etc 
+class AdminOrdersById(Resource):
+    @cross_origin()
+    def put(self, orderId):
+        parser = reqparse.RequestParser()
+        parser.add_argument('status', type=str, required=True)
+        args = parser.parse_args()
+        
+        order = Order.query.get(orderId)
+        print("this is the order", order)
+        if not order:
+            return {'message': 'Order not found'}, 404
+        
+        order.status = args['status']
+        db.session.commit()
+        
+        return {'message': 'Order status updated successfully'}, 200
+
+"""
+class AdminProducts(Resource):
     def get(self):
         products = [product.to_dict(only=('id', 'name', 'description', 'price', 'image_url','quantity_available',)) for product in Product.query.all()]
         return make_response(products,200)
@@ -238,7 +279,10 @@ class Admin(Resource):
         new_product = Product(
             name = data["name"],
             price = data["price"],
-            description = data["description"]
+            description = data["description"],
+            image_url = data['image_url'],
+            quantity_available = data['quantity_available'],
+            seller_id = 1
         )
 
         db.session.add(new_product)
@@ -269,7 +313,7 @@ class AdminProductID(Resource):
 
         if product:
             db.session.delete(product)
-            db.session.add()
+            db.session.commit()
             return make_response("",204)
         
         else:
@@ -287,10 +331,15 @@ api.add_resource(UserLogin, '/userLogin')
 api.add_resource(Logout, "/userLogout")
 api.add_resource(Users, "/users")
 api.add_resource(UserByID, "/users/<int:id>")
+# From clients end 
 api.add_resource(Products, "/products")
 api.add_resource(Orders,"/orders")
-api.add_resource(Admin,"/admin")
-api.add_resource(AdminProductID,"/admin/<int:id>")
+# From admin end 
+api.add_resource(AdminProducts,"/adminProducts")
+api.add_resource(AdminProductID,"/adminProducts/<int:id>")
+# Add a get request for admin orders 
+api.add_resource(AdminOrders, '/adminOrders')
+#api.add_resource(AdminOrdersById, '/adminOrders/<int:id>')
 
 
 if __name__ == '__main__':

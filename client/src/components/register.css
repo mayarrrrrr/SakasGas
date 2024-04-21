@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
   }
   
   .bodyReg {
@@ -40,15 +39,12 @@
   }
   
   .form-group label {
-    display: block;
     margin-bottom: 5px;
   }
   
   .form-control {
-    width: 100%;
-    padding: 10px;
+    width: 400px;
     font-size: 18px;
-    letter-spacing: 3px;
     border-radius: 5px;
     border: 1px solid #ccc;
     color: black;
@@ -56,7 +52,7 @@
   
   .btn {
     display: block;
-    width: 100%;
+    width: 400px;
     padding: 10px;
     letter-spacing: 5px;
     font-size: 16px;

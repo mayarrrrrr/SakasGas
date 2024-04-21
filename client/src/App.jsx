@@ -9,6 +9,7 @@ import ClientProducts from './client/ClientProducts';
 import ClientCart from './client/ClientCart';
 import ClientOrder from './client/ClientOrder';
 import AdminOrder from './admin/AdminOrder';
+import AdminProducts from './admin/AdminProducts';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/login' element={<Login/>}>Login</Route>
         <Route path='/admin' element={<Admin/>}>
           <Route path='orders' element={<AdminOrder/>}></Route>
+          <Route path='products' element={<AdminProducts/>}></Route>
         </Route>
         <Route path='/client' element={<Client/>}>
           <Route path="products" element={<ClientProducts />} />

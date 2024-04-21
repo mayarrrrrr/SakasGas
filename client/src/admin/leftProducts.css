@@ -1,0 +1,36 @@
+.order-table-heading{
+    display: flex;
+
+}
+
+.order-table-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-table-title{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-left: 20px;
+
+}
+
+.left-search-bar{
+   /* width: 300px;
+    height: 40px;*/
+    width: 50%;
+    border: none;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.order-table-heading input{
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}

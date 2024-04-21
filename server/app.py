@@ -183,7 +183,7 @@ class Orders(Resource):
                 'order_id': order.id,
                 'status': order.status,
                 'total_price': float(sum(item.product.price * item.quantity for item in order.order_items)),
-                'products': [{'name': item.product.name, 'quantity': item.quantity} for item in order.order_items]
+                'products': [{'name': item.product.name, 'quantity': item.quantity, 'image':item.product.image_url, 'price':item.product.price} for item in order.order_items]
             }
             aggregated_orders.append(order_details)
 

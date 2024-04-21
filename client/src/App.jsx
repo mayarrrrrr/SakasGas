@@ -29,7 +29,7 @@ function App() {
           <Route path="order" element={<ClientOrder />} />
           {/*add logout*/}
         </Route>
-        <Route path="*" element={<Navigate to="/register" />} />
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </div>
     </>

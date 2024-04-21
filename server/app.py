@@ -153,29 +153,11 @@ class Products(Resource):
 #  CLIENT ORDERS
 
 class Orders(Resource):
-
-   # @jwt_required()
-   # def get(self):
-   #     orders = [order.to_dict(only=('id', 'total_price', 'status', 'user_id',)) for order in Order.query.all()]
-   #     return make_response(jsonify(orders),200)
-    """
+    @jwt_required()
     def get(self):
-        orders_data = []
+        current_user_id = get_jwt_identity()
         orders = Order.query.all()
-        for order in orders:
-            for order_item in order.order_items:
-                order_info = {}
-                order_info['product_name'] = order_item.product.name
-                order_info['total_price'] = order.total_price
-                order_info['quantity'] = order_item.quantity
-                order_info['status'] = order.status
-                order_info['order_id'] = order_item.order_id
-                orders_data.append(order_info)
-        return jsonify(orders_data)
-    """
 
-    def get(self):
-        orders = Order.query.all()
         aggregated_orders = []
 
         for order in orders:

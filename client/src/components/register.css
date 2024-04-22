@@ -348,11 +348,16 @@ NavLink:hover {
   z-index: 1; 
 }
 
+.form-container h1{
+  color: white;
+  font-weight: lighter;
+}
+
 .form-container::before,
 .form-container::after {
   content: '';
   position: absolute;
-  background-color: #007bff; 
+  /*background-color: #007bff; */
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -405,9 +410,7 @@ NavLink:hover {
   background-color: #0056b3;
 }
 
-span{
-  color: cyan;
-}
+
 
 
 

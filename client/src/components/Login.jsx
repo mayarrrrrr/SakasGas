@@ -27,7 +27,7 @@ function Login() {
         const data = await res.json();
         console.log("this is the data", data);
         localStorage.setItem("access_token", data.access_token);
-        window.alert("Login successful");
+        //window.alert("Login successful");
 
         // Retrieve role from response data
         const role = data.role;

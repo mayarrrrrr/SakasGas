@@ -41,7 +41,7 @@ function Register() {
 
         if (res.status === 201){
             localStorage.setItem('access_token', data.access_token);
-            window.alert('Registration successful');
+            //window.alert('Registration successful');
             navigate('/login');
         } else {
             window.alert('Registration failed');
@@ -51,7 +51,10 @@ function Register() {
     return (
        <div className="bodyReg">
            <div className="container">
+            <div className="circle"></div>
+            <div className="circle"></div>
             <div className="form-container">
+                <h1>Welcome</h1>
                 <form method="POST">
                     <div className="form-group">
                         <label htmlFor="username">User Name</label>
@@ -81,7 +84,7 @@ function Register() {
                         </select>
                     </div>
                     
-                    <span>Already Registered? </span><NavLink to='/login'>Log in</NavLink><br /> <br />
+                    <span className="register-span">Already Registered? <NavLink to='/login'>Log in</NavLink><br /> <br /></span>
                     <button type="submit" className="btn btn-primary" id="register" name="register" onClick={postData}>Register</button>
                 </form>
             </div>

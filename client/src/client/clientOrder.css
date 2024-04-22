@@ -18,7 +18,7 @@
 .client-order-container {
     padding: 20px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns:27rem 27rem 27rem;
     width: 100%;
     gap: 1rem;
     padding: 50px;

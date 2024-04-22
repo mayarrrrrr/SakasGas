@@ -51,9 +51,6 @@ function Register() {
     return (
        <div className="bodyReg">
            <div className="container">
-            <div className="welcome-text">
-                <h1>Welcome!</h1>
-            </div>
             <div className="form-container">
                 <form method="POST">
                     <div className="form-group">

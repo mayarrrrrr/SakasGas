@@ -14,6 +14,16 @@
 
 }
 
+.client-cart-page h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-weight: lighter;
+
+}
+
 .client-cart {
     display: flex;
     flex-direction: column;

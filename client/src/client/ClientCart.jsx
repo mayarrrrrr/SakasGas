@@ -16,6 +16,8 @@ function ClientCart() {
         return total + item.price * item.quantity;
     }, 0);
 
+    console.log("this is the total", total)
+
     const handlePlaceOrder = async () => {
         setLoading(true);
         setError(null);
@@ -87,6 +89,7 @@ function ClientCart() {
                                             }
                                         }}>-</button>
                                         <span>{item.quantity}</span>
+                                        {console.log("this is the quantity",item.quantity)}
                                         <button onClick={() => dispatch({ type: 'INCREASE', payload: item })}>+</button>
                                     </div>
                                     <p className='total-price'>${item.quantity * item.price}</p>

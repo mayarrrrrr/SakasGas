@@ -6,13 +6,17 @@ export const Context = (props) => {
     const reducer = (state, action) => {
         switch (action.type) {
             case 'ADD':
+                console.log("ADD action payload:", action.payload);
                 const tempState = state.filter((item) => action.payload.id === item.id)
                 if (tempState.length > 0) {
+                    console.log("Item already exists in the cart.");
                     return state
                 } else {
+                    console.log("Adding new item to the cart.");
                     return [...state, action.payload]
                 }
             case 'INCREASE':
+                console.log("Before increase:", state);
                 const tempState1 = state.map((item) => {
                     if (item.id === action.payload.id) {
                         return { ...item, quantity: item.quantity + 1 }
@@ -20,8 +24,10 @@ export const Context = (props) => {
                         return item
                     }
                 })
+                console.log("After increase:", tempState1);
                 return tempState1
             case 'DECREASE':
+                console.log("Before decrease:", state);
                 const tempState2 = state.map((item) => {
                     if (item.id === action.payload.id) {
                         return { ...item, quantity: item.quantity - 1 }
@@ -29,6 +35,7 @@ export const Context = (props) => {
                         return item
                     }
                 })
+                console.log("After decrease:", state);
                 return tempState2;
             case 'REMOVE':
                 const tempState3 = state.filter((item) => item.id !== action.payload.id)
@@ -58,6 +65,7 @@ export const Context = (props) => {
 
 
 /*
+
 import { createContext, useReducer } from "react";
 
 export const cartContext = createContext()

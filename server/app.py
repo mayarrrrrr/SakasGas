@@ -199,6 +199,8 @@ class Orders(Resource):
 
             db.session.add(new_order)
             db.session.commit()
+
+            print("This is the new order", new_order)
             return make_response(new_order.to_dict(only=("id","status", "total_price")), 201)
 
         except Exception as e:

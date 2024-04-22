@@ -5,6 +5,11 @@ import Register from './components/Register';
 import './App.css'
 import Admin from './admin/Admin';
 import Client from './client/Client';
+import ClientProducts from './client/ClientProducts';
+import ClientCart from './client/ClientCart';
+import ClientOrder from './client/ClientOrder';
+import AdminOrder from './admin/AdminOrder';
+import AdminProducts from './admin/AdminProducts';
 
 function App() {
 
@@ -14,9 +19,17 @@ function App() {
       <Routes>
         <Route path='/register' element={<Register/>}>Register</Route>
         <Route path='/login' element={<Login/>}>Login</Route>
-        <Route path='/admin' element={<Admin/>}>Admin</Route>
-        <Route path='/client' element={<Client/>}>Admin</Route>
-        <Route path="*" element={<Navigate to="/register" />} />
+        <Route path='/admin' element={<Admin/>}>
+          <Route path='orders' element={<AdminOrder/>}></Route>
+          <Route path='products' element={<AdminProducts/>}></Route>
+        </Route>
+        <Route path='/client' element={<Client/>}>
+          <Route path="products" element={<ClientProducts />} />
+          <Route path="cart" element={<ClientCart />} />
+          <Route path="order" element={<ClientOrder />} />
+          {/*add logout*/}
+        </Route>
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </div>
     </>

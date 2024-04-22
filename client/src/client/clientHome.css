@@ -1,0 +1,407 @@
+.hero-wrapper{
+    position: relative;
+    padding-bottom: 2rem;
+    /*background-color: var(--black);*/
+}
+
+.hero-container{
+    justify-content: space-between;
+    /*try space around*/
+    align-items: flex-end;
+    background-color: var(--black);
+    color:white;
+}
+
+
+
+/*left side*/
+
+.hero-left{
+    gap: 3;
+    /*width: 40%;*/
+}
+
+.hero-title{
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title>h1{
+    font-weight: 600;
+    font-size: 3.8rem;
+    line-height: 4rem;
+}
+
+.orange-circle{
+    height: 4rem;
+    width: 4rem;
+    background: var(--orange-gradient);
+    border-radius: 999px;
+    position: absolute;
+    right: 28%;
+    top: -10%;
+    z-index: -1;
+}
+
+.client-search-bar{
+    background-color: white;
+    border-radius: 5px;
+    border: 3px solid rgba(120, 120, 120, 0.374);
+    padding: 0.4rem 0.5rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.client-search-bar>input{
+    border: none;
+    outline: none;
+}
+
+.stats{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.stat>:nth-child(1){
+    font-size: 2rem;
+}
+
+.stat>:nth-child(1)>:last-child{
+    color: orange;
+}
+
+/*Right side*/
+
+.hero-right .image-container{
+    width: 30rem;
+    height: 32rem;
+    overflow: hidden;
+    border-radius: 15rem 15rem 0rem 0rem;
+    border: 10px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 1rem;
+}
+
+.image-container>img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Slider */
+.r-wrapper{
+    background-color: white;
+    color: black;
+}
+
+.r-container{
+    overflow: hidden;
+    position: relative;
+}
+
+.r-head{
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+.r-card{
+    gap: 0.6rem;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: max-content;
+    margin: auto;
+    transition: all 300ms ease-in;
+}
+
+.r-card>img{
+    width: 100%;
+    max-width: 15rem; 
+    border-radius: 5px; 
+}
+
+.r-card>:nth-child(2){
+    font-size: 1.5rem;
+
+}
+
+.r-card>:nth-child(3){
+    font-size: .7rem;
+    width: 15rem;
+}
+
+.r-card:hover{
+    scale: 1.025;
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(136, 160, 255, 0.46) 217.91%);
+    box-shadow: 0px 72px 49px -51px rgba(136, 160, 255, 0.21) ;
+}
+
+.swiper-horizontal{
+    overflow: visible;
+}
+
+.r-buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 80rem;
+    position: absolute;
+    top: 25%; /* Adjust top position */
+    left: 1rem;
+    right: 1rem;
+    z-index: 1; 
+}
+
+.r-buttons>button{
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    border-radius: 5px;
+    color: lightgray;
+    cursor: pointer;
+}
+
+
+/* Image Container */
+.c-image-container{
+    width: 30rem;
+    height: 34rem;
+    overflow: hidden;
+    border-radius: 15rem 15rem 0rem 0rem;
+    /*border: 10px solid rgba(255, 255, 255, 0.12);*/
+    border: 10px solid rgba(255, 146, 45, 0.562);
+    
+}
+
+.c-image-container>img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.c-container{
+    justify-content: space-between;
+}
+
+.c-container>div{
+    flex: 1;
+}
+
+.c-left{
+    width: 100%;
+    gap: 0.5rem;
+    margin-left: 100px;
+}
+
+.contactModes{
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.contactModes .row{
+    gap: 1.5rem;
+}
+
+.mode{
+    width: 16rem;
+    padding: 1rem;
+    border: 0.8px solid rgba(128, 128, 128, 0.143);
+    border-radius: 5px;
+    gap: 1rem;
+    transition: all 300ms ease-in;
+}
+
+.mode .c-button{
+    width: 100%;
+    background-color: var(--lightBlue);
+    padding: 0.6rem 1.4rem;
+    color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.mode>:nth-child(1){
+    width: 100%;
+    gap: 1.6rem;
+}
+
+.mode .detail .primaryText{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.mode:hover{
+    scale: 1.1;
+    box-shadow: var(--shadow);
+}
+
+.mode .c-button:hover{
+    scale: 0.8;
+    background: var(--blue-gradient);
+    color: white;
+
+}
+
+
+/* Get Started */
+.g-inner-container{
+    gap: 1.5rem;
+    background: #4161df;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 6px solid #5d77d6;
+    text-align: center;
+    max-width: 100%;
+    margin-right: 100px;
+    margin-left: 100px;
+
+}
+
+.g-inner-container .primaryText{
+    color: white;
+    font-weight: 600;
+}
+
+.g-inner-container .secondaryText{
+    color: rgba(255, 255, 255, 0.587);
+}
+
+.g-inner-container .button{
+    background: #5a73d7;
+    border: 2px solid white;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+}
+
+/*Footer*/
+
+.f-container{
+    justify-content: space-between;
+}
+
+.f-left{
+    gap: 1rem;
+}
+
+.f-menu{
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    font-weight: 500;
+
+}
+
+
+@media (max-width: 1400px) {
+    .r-buttons{
+        gap: 50rem;
+    }
+    
+}
+
+
+@media (max-width: 1024px){
+    .c-container{
+        flex-direction: column;
+    }
+
+    .c-left{
+        justify-content: center;
+        margin-left: 300px;
+    }
+
+    .c-right{
+        margin-right: 100px;
+    }
+
+    .contactModes{
+        width: 100%;
+    }
+    
+    .row{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mode{
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 950px) {
+    .r-buttons{
+        gap: 10rem;
+    }
+    
+}
+
+@media (max-width: 900px) {
+    .r-buttons{
+        position: initial;
+        gap: 0;
+        justify-content: space-around;
+    }
+    
+}
+
+@media (max-width:768px){
+    .f-container{
+        justify-content: center;
+
+    }
+
+    .f-container>div{
+        align-items: center !important;
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 640px ){
+    .hero-title>h1{
+        margin-top: 2rem;
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .orange-circle{
+        height: 3rem;
+        width: 3rem;
+        right: 27%;
+        top: 10%;
+    }
+    .image-container{
+        width: 95%;
+        height: 25rem;
+    }
+    .stats{
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    /*.hero-right{
+        width: 100%;
+    }
+    .stat>:nth-child(1){
+        font-style: 1.5rem;
+    }
+    .stat>:nth-child(2){
+        font-style: 0.8rem;
+    }*/
+    .r-buttons{
+        position: initial;
+        gap: 0;
+        justify-content: space-around;
+        
+    }
+
+
+}
+
+
+
+
+
+
+
+

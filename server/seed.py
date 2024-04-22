@@ -11,7 +11,7 @@ def seed_data():
 
         seller_id = 1  # Set the seller_id to 1 for all products
 
-        phone1 = Product(name='iPhone X', price=999, description='Apple iPhone X, 64GB, Space Gray', image_url='https://i.pinimg.com/564x/77/64/10/776410caae67a320d6765b2d23434ff2.jpg', quantity_available=100, seller_id=seller_id)
+        phone1 = Product(name='iPhone 14 Prp', price=999, description='Apple iPhone 14 Pro, 128GB, Purple', image_url='https://i.pinimg.com/564x/46/4a/3c/464a3c2e8af440f769de8456976ffbc7.jpg', quantity_available=100, seller_id=seller_id)
         phone2 = Product(name='Samsung Galaxy S20', price=799, description='Samsung Galaxy S20, 128GB, Cosmic Gray', image_url='https://i.pinimg.com/564x/e8/b2/7d/e8b27df6b3f8f76c569c1715297672d2.jpg', quantity_available=80, seller_id=seller_id)
         phone3 = Product(name='Google Pixel 5', price=699, description='Google Pixel 7a, 128GB, Just Black', image_url='https://i.pinimg.com/564x/df/c7/24/dfc72427002660c11845df1c3e6cf43b.jpg', quantity_available=120, seller_id=seller_id)
         phone4 = Product(name='OnePlus 9 Pro', price=899, description='OnePlus 9 Pro, 256GB, Morning Mist', image_url='https://i.pinimg.com/564x/a2/c9/61/a2c9612d875b39b0d899598b67dc415d.jpg', quantity_available=90, seller_id=seller_id)

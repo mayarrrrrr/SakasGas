@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  .containerLog {
+    /*background-image: url('../blue.jpeg');*/
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    /*new code */
+    position: relative;
+    background-color: black;
+   
+  }
+
+  /* new code for circles*/
+  .circle {
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .circle:first-child {
+      right: 20%;
+      top: 5%;
+     /* background: linear-gradient(#ff0060, #c302b5);*/
+     background: var(--orange-gradient);
+  }
+  .circle:nth-child(2) {
+      left: 20%;
+      bottom: 5%;
+      background: linear-gradient(164deg, #144e7cfc, #1877f2);
+  }
+  
+  .glass-form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 60px;
+    /*max-width: 400px;*/
+    max-width: fit-content;
+  }
+
+  .glass-form-container h2{
+    color: white;
+  }
+
+  .glass-form-container p{
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+.form-group>input{
+  width: 400px;
+  /*new code*/
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form-group>input::placeholder{
+  color: white;
+}
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 40px;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .glass-form-container a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .glass-form-container a:hover {
+    text-decoration: underline;
+    color: #041e3a;
+  }
+
+  .register-span{
+    color: white;
+  }
+
+
+
+  
+  
+  
+  @media screen and (max-width: 768px) {
+    .glass-form-container {
+      padding: 30px;
+    }
+    
+    .form-control {
+      font-size: 14px;
+    }
+    
+    .btn {
+      font-size: 14px;
+    }
+  }
+  

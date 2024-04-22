@@ -1,0 +1,9 @@
+.main-dash{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main-dash>span{
+    margin-top: 2rem;
+}

@@ -1,0 +1,34 @@
+[
+    {
+      "category": "Laptops",
+      "image": "./laptops.jpeg",
+      "description": "Browse our selection of powerful laptops for work, gaming, and everything in between. ."
+    },
+    {
+      "category": "Phones",
+      "image": "./phones.jpeg",
+      "description": "Stay connected with the latest smartphones from top brands."
+    },
+    {
+        "category": "Smartwatches",
+        "image": "./smartwatches2.jpeg",
+        "description": "Stay on top of your fitness goals and notifications with our range of stylish smartwatches."
+      },
+    {
+      "category": "Headphones",
+      "image": "./headphones.jpeg",
+      "description": "Immerse yourself in premium sound quality with our collection of headphones."
+    },
+    
+    {
+      "category": "Tablets",
+      "image": "./tablets.jpeg",
+      "description": "Experience versatility and productivity with our range of tablets."
+    },
+    {
+      "category": "Cameras",
+      "image": "./cameras.jpeg",
+      "description": "Capture life's moments in stunning detail with our selection of cameras."
+    }
+  ]
+  

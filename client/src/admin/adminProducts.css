@@ -1,0 +1,13 @@
+.admin-products-section{
+    display: grid;
+    grid-template-columns: auto 25rem;
+    gap: 1rem;
+}
+
+.right-products-container{
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 3rem;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.64);
+}
+

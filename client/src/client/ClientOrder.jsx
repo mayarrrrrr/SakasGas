@@ -22,38 +22,43 @@ function ClientOrder() {
     };
 
     return (
-        <div className="client-order-container">
+        <>
             {orders.length === 0 ? (
-                <h1>No Orders</h1>
+                <div className='no-orders'>
+                    <h2>No Orders</h2>
+                    <img src="/noOrders.jpg" alt="" />
+                </div>   
             ) : (
-                orders.map(order => (
-                    <div className="order-card" key={order.order_id}>
-                        <div className="order-details">
-                            <div className="order-details-left">
-                                <span className='secondaryText'>Order ID</span>
-                                <span>#{order.order_id}</span>
-                            </div>
-                            <div className="order-details-right">
-                                <p>Status: <span className="order-status">{order.status}</span></p>
-                            </div>
-                        </div>
-                        
-                        {order.products.map((product) => (
-                            <div className="all-products" key={product.name}>
-                                <div className="single-product">
-                                    <img src={product.image} alt="" />
-                                    <div className="single-product-details">
-                                        <span className='product-name'>{product.name}</span>
-                                        <span className='product-price'>{product.price} <span className='secondaryText'>x{product.quantity}</span></span>
-                                    </div>  
+                <div className="client-order-container">
+                    {orders.map(order => (
+                        <div className="order-card" key={order.order_id}>
+                            <div className="order-details">
+                                <div className="order-details-left">
+                                    <span className='secondaryText'>Order ID</span>
+                                    <span>#{order.order_id}</span>
+                                </div>
+                                <div className="order-details-right">
+                                    <p>Status: <span className="order-status">{order.status}</span></p>
                                 </div>
                             </div>
-                        ))}
-                        <p>Total Price: <span className="total-price"> ${order.total_price.toFixed(2)}</span></p>
-                    </div>
-                ))
+                            
+                            {order.products.map((product) => (
+                                <div className="all-products" key={product.name}>
+                                    <div className="single-product">
+                                        <img src={product.image} alt="" />
+                                        <div className="single-product-details">
+                                            <span className='product-name'>{product.name}</span>
+                                            <span className='product-price'>{product.price} <span className='secondaryText'>x{product.quantity}</span></span>
+                                        </div>  
+                                    </div>
+                                </div>
+                            ))}
+                            <p>Total Price: <span className="total-price"> ${order.total_price.toFixed(2)}</span></p>
+                        </div>
+                    ))}
+                </div>
             )}
-        </div>
+        </>
     );
 }
 

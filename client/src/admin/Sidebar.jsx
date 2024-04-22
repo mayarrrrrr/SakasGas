@@ -12,7 +12,7 @@ function Sidebar(){
         <div className="sidebar">
             {/*logo*/}
             <div className="logo">
-                <img src="./e-hub logo.png" alt="" />
+                <img src="/e-hub logo.png" alt="" />
                 <span>
                     <span>E</span>-Hub
                 </span>

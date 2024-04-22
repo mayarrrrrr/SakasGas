@@ -53,7 +53,10 @@ function ClientCart() {
     return (
         <div className="client-cart-page">
             {state.length === 0 ? (
-                <h2>Your cart is empty</h2>
+                <div className="empty-cart">
+                    <h2>Your cart is empty</h2>
+                    <img src="https://cdn.dribbble.com/users/2046015/screenshots/4591856/media/99db7af8c3d839dd65017f76ae434785.gif" alt="" />
+                </div>            
             ) : (
                 <>
                     <h2>Shopping Cart</h2>

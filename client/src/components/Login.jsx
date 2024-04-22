@@ -52,8 +52,8 @@ function Login() {
     <>
       <section>
        <div className="containerLog">
-        <div class="circle"></div>
-        <div class="circle"></div>
+        <div className="circle"></div>
+        <div className="circle"></div>
        <div className="glass-form-container">
         <h2>Welcome Back!</h2>
         <p>Login to your account</p>

@@ -6,7 +6,7 @@ import { cartContext } from '../context/Context'
 
 function ClientNavbar() {
     const { state } = useContext(cartContext);
-    console.log("Cart State:", state);
+    //console.log("Cart State From Navbar:", state);
 
     // Calculate total quantity of items in the cart
     //const totalQuantity = state.reduce((total, item) => total + item.quantity, 0);

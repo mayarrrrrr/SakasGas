@@ -155,7 +155,7 @@ class Products(Resource):
 class Orders(Resource):
     @jwt_required()
     def get(self):
-        current_user_id = get_jwt_identity()
+        #current_user_id = get_jwt_identity()
         orders = Order.query.all()
 
         aggregated_orders = []
@@ -185,6 +185,7 @@ class Orders(Resource):
                 #user_id = data["user_id"],
                 #product-id = data['product_id']
                 user_id=current_user_id,
+                #user_id = "user3@gmail.com",
                 total_price=data["total"],
                 status="pending"
             )
@@ -198,7 +199,7 @@ class Orders(Resource):
 
             db.session.add(new_order)
             db.session.commit()
-            return make_response(new_order.to_dict(), 201)
+            return make_response(new_order.to_dict(only=("id","status", "total_price")), 201)
 
         except Exception as e:
             db.session.rollback()

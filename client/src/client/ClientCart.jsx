@@ -13,6 +13,7 @@ function ClientCart() {
     const [success, setSuccess] = useState(false);
 
     const total = state.reduce((total, item) => {
+        console.log("this is the type of data", typeof item.quantity);
         return total + item.price * item.quantity;
     }, 0);
 
@@ -22,9 +23,15 @@ function ClientCart() {
         setLoading(true);
         setError(null);
         setSuccess(false);
+        
+        console.log("a string",{
+            total: total,
+            items: state.map(item => ({ id: item.id, quantity: item.quantity })),
+        })
 
         try {
             const res = await fetch('http://127.0.0.1:5555/orders', {
+
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +77,10 @@ function ClientCart() {
                             <h4>Total</h4>
                         </div>
                         {state.map((item, index) => {
+                            //item.quantity = 1
+                            console.log("this is the item", item)
                             return (
+                                
                                 <div className="client-cart-card" key={index}>
                                     <div className="product-details">
                                         <img src={item.image_url} alt={item.name} />
@@ -89,7 +99,7 @@ function ClientCart() {
                                             }
                                         }}>-</button>
                                         <span>{item.quantity}</span>
-                                        {console.log("this is the quantity",item.quantity)}
+                                        {/*console.log("this is the quantity",item.quantity)*/}
                                         <button onClick={() => dispatch({ type: 'INCREASE', payload: item })}>+</button>
                                     </div>
                                     <p className='total-price'>${item.quantity * item.price}</p>

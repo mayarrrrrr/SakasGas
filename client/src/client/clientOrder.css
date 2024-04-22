@@ -18,9 +18,10 @@
 .client-order-container {
     padding: 20px;
     display: grid;
-    grid-template-columns: auto auto;
-    width: 700px;
+    grid-template-columns: auto auto auto;
+    width: 100%;
     gap: 1rem;
+    padding: 50px;
 }
 
 .client-order-container h1{

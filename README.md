@@ -1,27 +1,14 @@
-# E-Hub 
+# BONMAJ 
 
-## Authors: Michelle Amina Okumu , Meyer Akok, Mujahid Abdi, Victor Muturi, Valerie Nandabi 
+## Authors:  Mayar Akok
 
 ### Introduction
-E-hUB is a group project made as part of Phase4 Week 3 Independent Project. It's a fullstack e-commerce and admin dashboard web application built with react and Flask .
+BONMAJ is fullstack e-commerce and admin dashboard web application built with react and Flask .
 
-E-Hub is an innovative e-commerce application designed to cater to all your electronics needs. With its comprehensive platform, E-Hub offers both clients and administrators a seamless shopping and management experience.
+It is an innovative e-commerce application designed to cater to all your bakery needs. With its comprehensive platform, E-Hub offers both clients and administrators a seamless shopping and management experience.
 
 
 
-### Project Requirements
-1. Use a Flask API backend with a React frontend.
-2. Have at least three models on the backend, that include the following:
-3. At least two one-to-many relationships.
-4. At least one reciprocal many-to-many relationship.
-5. The many-to-many association model/table must have a user submittable attribute, i.e. an attribute aside from the foreign keys.
-6. Full CRUD actions for at least one resource.
-7. Minimum of create and read actions for EACH resource.
-8. Use forms and validation through Formik on all input.
-9. At least one data type validation.
-10. At least one string/number format validation.
-11. Have at least three different client-side routes using React Router. Be sure to include a nav bar or other UI element that allows users to navigate between routes.
-12. Connect the client and server using fetch().
 
 
 ### Folders and Files

@@ -69,7 +69,8 @@ function RightProducts(){
                     </div>
                     <div>
                         <label htmlFor="image_url">Image Url</label>
-                        <input type="text" name="image_url" value={formData.image_url} onChange={handleChange} placeholder="Image URL" required />
+                        {/* <input type="text" name="image_url" value={formData.image_url} onChange={handleChange} placeholder="Image URL" required /> */}
+                        <button>Upload image</button>
                     </div>
                     <button type="submit">Add Product</button>
                 </form>

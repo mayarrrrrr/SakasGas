@@ -43,13 +43,13 @@ function ClientProducts(){
 
         setProducts(sortedProducts);
     };
-
+    
     return (
         <div className='client-products'>
-            <div className="flexColStart p-head">
+            {/* <div className="flexColStart p-head">
                 <span className='orangeText'>Best Choices</span>
                 <span className='primaryText'>Popular Categories</span>
-            </div>
+            </div> */}
             <div className="client-products-content">
                 <p>Showing all {products.length} results</p>
                 <select value={sortOption} onChange={handleSort}>
@@ -62,7 +62,7 @@ function ClientProducts(){
             <div className="client-products-container">
                 {products.map((product) => (
                     <div className="flexColStart p-card" key={product.id}>
-                        <img src={product.image_url} alt="category"/>
+                        <img className="productsimage"src={product.image_url} alt="category"/>
                         <span className="secondaryText p-price">
                             <span style={{color:"orange"}}>$</span>
                             <span>{product.price}</span>

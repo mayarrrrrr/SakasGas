@@ -16,7 +16,7 @@ function ClientNavbar() {
         <section className='h-wrapper'>
             <div className="h-container">
                 <NavLink to="/client">
-                    <img src="/e-hub logo.png" alt="logo" width={70} height={70} />
+                    <img src="/logo3.jpeg" alt="logo" width={100} height={80}  className='log'/>
                 </NavLink>
                 <div className="h-menu">
                     <NavLink className="client-nav-link" to='/client/products'>Products</NavLink>
@@ -30,7 +30,7 @@ function ClientNavbar() {
                         {totalQuantity}
                     </span>
                     
-                    <button className='button'><NavLink to="/client/logout">Logout</NavLink></button>
+                    <button className='button' ><NavLink className="button-navlink"to="/client/logout">Logout</NavLink></button>
                 </div>
             </div>
         </section>

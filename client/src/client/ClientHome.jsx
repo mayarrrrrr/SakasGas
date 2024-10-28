@@ -22,14 +22,14 @@ function ClientHome(){
                         initial={{y:"2rem", opacity:0}}
                         animate={{y:0, opacity: 1}}
                         transition={{duration:2, type:"spring"}}>
-                            Elevate <br /> 
-                            Your Digital <br />
-                            Lifestyle 
+                            BON<span className='spantitle'>MAJ </span><br /> 
+                              BAKERY<br />
+                            
                         </motion.h1>
                     </div>
                     <div className="flexColStart hero-des">
-                        <span className='secondaryText'>From cutting-edge gadgets to must-have accessories</span>
-                        <span className='secondaryText'>Explore a world of high-quality electronics at your fingertips. </span>
+                        <span className='secondaryText'> From warm, fresh bread to decadent cakes and delightful pastries, </span>
+                        <span className='secondaryText'>Eevery treat is crafted with love and the highest quality ingredients </span>
                     </div>
                     <div className="flexCenter client-search-bar">
                         <HiLocationMarker color="var(--blue)" size={25}/>
@@ -67,7 +67,7 @@ function ClientHome(){
                     animate={{x:0, opacity:1}}
                     transition={{duration:2, type:"spring"}}
                     className="image-container">
-                        <img src="./contactUs.jpeg" alt="" />
+                        <img src="./pastry_bg.jpg" alt="" />
 
                     </motion.div>
                 </div>
@@ -98,7 +98,7 @@ function ClientHome(){
                 <div className="paddings innerWidth flexCenter c-container">
                     <div className="c-left">
                         <div className="c-image-container">
-                            <img src="./hero.jpeg" alt="" />
+                            <img src="./pastry_bg.jpg" alt="" />
                         </div>
                     </div>
                     {/*Right side */}
@@ -117,7 +117,7 @@ function ClientHome(){
                                         </div>
                                         <div className="flexColStart detail">
                                             <span className='primaryText'>Call</span>
-                                            <span className='secondaryText'>0728192401</span>
+                                            <span className='secondaryText'>0703776736</span>
                                         </div>
                                     </div>
                                     <div className="flexCenter c-button">Call Now</div>
@@ -131,7 +131,7 @@ function ClientHome(){
                                         </div>
                                         <div className="flexColStart detail">
                                             <span className='primaryText'>Message</span>
-                                            <span className='secondaryText'>0728192401</span>
+                                            <span className='secondaryText'>0703776736</span>
                                         </div>
                                     </div>
                                     <div className="flexCenter c-button">Message Us</div>
@@ -147,7 +147,7 @@ function ClientHome(){
                                         </div>
                                         <div className="flexColStart detail">
                                             <span className='primaryText'>Email</span>
-                                            <span className='secondaryText'>Ehub@gmail.com</span>
+                                            <span className='secondaryText'>ayak@gmail.com</span>
                                         </div>
                                     </div>
                                     <div className="flexCenter c-button">Email Us</div>
@@ -161,7 +161,7 @@ function ClientHome(){
                                         </div>
                                         <div className="flexColStart detail">
                                             <span className='primaryText'>Find Us</span>
-                                            <span className='secondaryText'>15 Bowery St</span>
+                                            <span className='secondaryText'>Mall Sixty Six</span>
                                         </div>
                                     </div>
                                     <div className="flexCenter c-button">Location</div>
@@ -184,26 +184,7 @@ function ClientHome(){
                     </div>
                 </div>
             </div>
-            <div className="f-wrapper">
-                <div className="paddings innerWidth flexCenter f-contain">
-                    {/*left side*/}
-                    <div className="flexColStart f-left">
-                        <img src="./e-hub logo.png" alt="" width={50} />
-                        <span className="secondaryText">Our vision is to redefine your shopping experience,<br/> offering unbeatable convenience and value to you.</span>
-                    </div>
-                    <div className="flexColStart f-right">
-                        <span className='primaryText'>Information</span>
-                        <span className='secondaryText'>15 Bowery St, Kitt Lane</span>
-                        <div className="flexCenter f-menu">
-                            <span>Home</span>
-                            <span>Products</span>
-                            <span>Cart</span>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            
 
             
         </section>

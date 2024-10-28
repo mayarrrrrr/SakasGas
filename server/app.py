@@ -68,6 +68,7 @@ class UserRegister(Resource):
 
 
 class UserLogin(Resource):
+    @cross_origin()
     def post(self):
         email = request.json['email']
         password = request.json['password']
@@ -169,7 +170,8 @@ class Orders(Resource):
             }
             aggregated_orders.append(order_details)
 
-       # print(aggregated_orders)
+        print(aggregated_orders)
+        print(order)
         
         return make_response(aggregated_orders, 200)
 
@@ -207,10 +209,10 @@ class Orders(Resource):
             db.session.rollback()
             return make_response(jsonify({"error": str(e)}), 400) 
 
-        #except ValueError:
-        #    return make_response(jsonify({"error":["validation errors"]}))
+        except ValueError:
+           return make_response(jsonify({"error":["validation errors"]}))
         
-        #return make_response(new_order.to_dict(),201)
+        return make_response(new_order.to_dict(),201)
     
 
 class AdminOrders(Resource):
@@ -231,9 +233,9 @@ class AdminOrders(Resource):
                 product_id = order_item.product.id
                 order_info['product_id'] = product_id
                 orders_data.append(order_info)
-        return jsonify(orders_data)
+        return make_response(orders.to_dict(),200)
 
-"""
+
 # put/patch order status from pending to approved/dispatched etc 
 class AdminOrdersById(Resource):
     @cross_origin()
@@ -252,7 +254,7 @@ class AdminOrdersById(Resource):
         
         return {'message': 'Order status updated successfully'}, 200
 
-"""
+
 class AdminProducts(Resource):
     def get(self):
         products = [product.to_dict(only=('id', 'name', 'description', 'price', 'image_url','quantity_available',)) for product in Product.query.all()]
@@ -322,9 +324,9 @@ api.add_resource(Orders,"/orders")
 # From admin end 
 api.add_resource(AdminProducts,"/adminProducts")
 api.add_resource(AdminProductID,"/adminProducts/<int:id>")
-# Add a get request for admin orders 
+# # Add a get request for admin orders 
 api.add_resource(AdminOrders, '/adminOrders')
-#api.add_resource(AdminOrdersById, '/adminOrders/<int:id>')
+api.add_resource(AdminOrdersById, '/adminOrders/<int:id>')
 
 
 if __name__ == '__main__':

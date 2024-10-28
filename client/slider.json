@@ -1,34 +1,34 @@
 [
     {
-      "category": "Laptops",
-      "image": "./laptops.jpeg",
-      "description": "Browse our selection of powerful laptops for work, gaming, and everything in between. ."
+      "category": "Bread",
+      "image": "https://www.rotellasbakery.com/wp-content/uploads/2014/12/slide1-bg.jpg",
+      "description": "Freshly baked bread"
     },
     {
-      "category": "Phones",
-      "image": "./phones.jpeg",
-      "description": "Stay connected with the latest smartphones from top brands."
+      "category": "Cakes",
+      "image": "https://i.pinimg.com/564x/d4/dc/ed/d4dced1af80b34bcd85313bab51a4202.jpg",
+      "description": "Freshly baked cakes"
     },
     {
-        "category": "Smartwatches",
-        "image": "./smartwatches2.jpeg",
-        "description": "Stay on top of your fitness goals and notifications with our range of stylish smartwatches."
+        "category": "Beans(Foul) ",
+        "image": "https://i.pinimg.com/564x/1d/67/7d/1d677d1f130a9b93b2ee2810a23544cc.jpg",
+        "description": "Fava Beans"
       },
     {
-      "category": "Headphones",
-      "image": "./headphones.jpeg",
-      "description": "Immerse yourself in premium sound quality with our collection of headphones."
+      "category": "Peanut",
+      "image": "https://i.pinimg.com/564x/95/8a/29/958a2983e1761003acf6fb8ee58ab336.jpg",
+      "description": "Smooth homemade peanut butter"
     },
     
     {
-      "category": "Tablets",
-      "image": "./tablets.jpeg",
-      "description": "Experience versatility and productivity with our range of tablets."
+      "category": "Custard",
+      "image": "https://www.topserveltd.co.ke/_next/image?url=https%3A%2F%2Fapp.topserveltd.co.ke%2Fimage%2Fcatalog%2Fproducts%2FZESTA-CUSTARD-POWDER-250G.jpg&w=1200&q=75  ",
+      "description": "Zesta custard powder"
     },
     {
-      "category": "Cameras",
-      "image": "./cameras.jpeg",
-      "description": "Capture life's moments in stunning detail with our selection of cameras."
+      "category": "Macaroni",
+      "image": "https://i.pinimg.com/564x/a0/52/ad/a052ad03995f0e5ef18775ce18f19503.jpg",
+      "description": "Macaroni"
     }
   ]
   

@@ -1,6 +1,6 @@
 .h-wrapper{
-    background: var(--black) ;
-    color: white;
+    background-image: url("/bakery_logo.jpg");
+    color: black;
 }
 
 .h-container{
@@ -11,6 +11,11 @@
     padding-top: 2rem;
     padding-bottom: 1rem;
     color: var(--secondary);
+}
+
+.client-nav-link{
+    text-decoration: none;
+    color: chocolate;
 }
 
 /*
@@ -31,6 +36,14 @@
 
 .h-menu .button{
     margin-left: 30px;
+    
+    
+    
+}
+
+.button-navlink{
+    color:white;
+    
 }
 
 
@@ -52,6 +65,8 @@
 .menu-icon{
     display: none;
 }
+
+
 
 @media (max-width: 768px){
     .menu-icon{
@@ -82,6 +97,7 @@
     .h-menu .button{
         padding: 5px;
         font-size: 20px;
+    
     }
     
 

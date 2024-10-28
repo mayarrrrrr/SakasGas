@@ -156,7 +156,7 @@ class Products(Resource):
 class Orders(Resource):
     @jwt_required()
     def get(self):
-        #current_user_id = get_jwt_identity()
+        # current_user_id = get_jwt_identity()
         orders = Order.query.all()
 
         aggregated_orders = []
@@ -165,8 +165,18 @@ class Orders(Resource):
             order_details = {
                 'order_id': order.id,
                 'status': order.status,
-                'total_price': float(sum(item.product.price * item.quantity for item in order.order_items)),
-                'products': [{'name': item.product.name, 'quantity': item.quantity, 'image':item.product.image_url, 'price':item.product.price} for item in order.order_items]
+                'total_price': float(sum(
+                    item.product.price * item.quantity for item in order.order_items if item.product
+                )),
+                'products': [
+                    {
+                        'name': item.product.name,
+                        'quantity': item.quantity,
+                        'image': item.product.image_url,
+                        'price': item.product.price
+                    }
+                    for item in order.order_items if item.product
+                ]
             }
             aggregated_orders.append(order_details)
 
@@ -174,6 +184,7 @@ class Orders(Resource):
         print(order)
         
         return make_response(aggregated_orders, 200)
+
 
     @jwt_required()
     def post(self):
@@ -219,21 +230,23 @@ class AdminOrders(Resource):
     def get(self):
         orders_data = []
         orders = Order.query.all()
+        
         for order in orders:
             for order_item in order.order_items:
-                order_info = {}
-                order_info['product_name'] = order_item.product.name
-                order_info['total_price'] = order.total_price
-                order_info['user_id'] = order.user_id
-                order_info['quantity'] = order_item.quantity
-                order_info['status'] = order.status
-                order_info['order_id'] = order_item.order_id
-                product_price = order_item.product.price
-                order_info['product_price'] = product_price
-                product_id = order_item.product.id
-                order_info['product_id'] = product_id
-                orders_data.append(order_info)
-        return make_response(orders.to_dict(),200)
+                if order_item.product:  # Check if product is not None
+                    order_info = {
+                        'product_name': order_item.product.name,
+                        'total_price': order.total_price,
+                        'user_id': order.user_id,
+                        'quantity': order_item.quantity,
+                        'status': order.status,
+                        'order_id': order_item.order_id,
+                        'product_price': order_item.product.price,
+                        'product_id': order_item.product.id
+                    }
+                    orders_data.append(order_info)
+
+        return make_response({"orders": orders_data}, 200)
 
 
 # put/patch order status from pending to approved/dispatched etc 
@@ -326,7 +339,7 @@ api.add_resource(AdminProducts,"/adminProducts")
 api.add_resource(AdminProductID,"/adminProducts/<int:id>")
 # # Add a get request for admin orders 
 api.add_resource(AdminOrders, '/adminOrders')
-api.add_resource(AdminOrdersById, '/adminOrders/<int:id>')
+api.add_resource(AdminOrdersById, '/adminOrders/<int:orderId>')
 
 
 if __name__ == '__main__':

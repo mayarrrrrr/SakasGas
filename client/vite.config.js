@@ -6,4 +6,7 @@ export default defineConfig({
    base: '/BONMAJ/client/',
   root:"./",
   plugins: [react()],
+  build: {
+    outDir: 'dist', // The output directory for the build
+  },
 })

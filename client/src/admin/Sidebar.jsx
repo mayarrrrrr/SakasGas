@@ -20,7 +20,7 @@ function Sidebar(){
             {/*menu navigation*/}
             <div className="menu">
                 <div className="menu-item">
-                    <div>
+                    <div className="icon">
                         <UilEstate/>
                     </div>
                     <NavLink className="nav-link" to='/admin'>Dashboard</NavLink>  

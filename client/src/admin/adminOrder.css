@@ -10,4 +10,42 @@
 
 .order-table{
     margin-top: 10px;
+
 }
+
+@media (max-width: 768px) {
+    /* Stack elements for smaller screens */
+    .order-container{
+        width: 80vw;
+    }
+    .order-container .primaryText {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  
+    .order-container .order-table table th,
+    .order-container .order-table table td {
+      padding: 8px;
+      font-size: 0.9rem;
+      
+    }
+  
+    /* Button styling adjustments */
+    .order-container .order-table .MuiButton-root {
+      font-size: 0.8rem;
+      padding: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further size reduction for mobile */
+    .order-container .primaryText {
+      font-size: 1rem;
+    }
+  
+    .order-container .order-table table th,
+    .order-container .order-table table td {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  }

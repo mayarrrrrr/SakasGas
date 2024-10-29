@@ -2,13 +2,15 @@
     color: black;
     font-size: 1.5rem;
     font-weight: lighter;
-    margin-bottom: 20px;
+    /* margin-bottom: 2px; */
+
 }
 
 .right-products-form {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
+    
     /* align-items: center; */
     /* gap: 10px;  */
   }
@@ -16,6 +18,11 @@
 .right-products-form div {
     display: flex;
     flex-direction: column;
+
+}
+
+.right-products{
+    overflow: hidden;
 }
   
 .right-products-form label {
@@ -41,15 +48,19 @@
 }
 
 .right-products-form button {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
     font-weight: 500;
     color: white;
-    padding: 0.6rem 1.4rem;
+    padding: 8px;
     background: var(--blue-gradient);
     border:none;
     border-radius: 0.2rem;
     transition: all 300ms ease-in;
+}
+.hidden_field{
+    height:0px;
+    width:0px;
 }
 
 .right-products-form button:hover{

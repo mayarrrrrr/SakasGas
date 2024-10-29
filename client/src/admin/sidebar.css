@@ -1,4 +1,4 @@
-.sidebar{
+.sidebar {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -6,8 +6,7 @@
     transition: all 300ms ease;
 }
 
-
-.logo{
+.logo {
     display: flex;
     height: 5rem;
     font-size: 22px;
@@ -18,53 +17,67 @@
     height: 4%;
 }
 
-.logo>img{
+.logo > img {
     width: 3rem;
     height: 3rem;
 }
 
 /* menu */
 
-.menu{
+.menu {
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.menu-item{
+.menu-item {
     display: flex;
     align-items: center;
     gap: 1rem;
-    height:2.5rem;
+    height: 2.5rem;
     margin-left: 2rem;
     position: relative;
     transition: all 300ms ease;
     font-size: 14px;
-    
 }
 
-.menu-item:hover{
+.menu-item:hover {
     cursor: pointer;
 }
 
-.menu-item>a{
+.menu-item > a {
     color: black;
     border-radius: 0.7rem;
 }
 
-
-.menu-item>a:hover{
+.menu-item > a:hover {
     background: linear-gradient(rgb(252, 198, 111) -146.42%, rgb(246, 185, 80) -46.42%);
-    margin-left: 0; 
+    margin-left: 0;
     color: white;
 }
 
-
-.menu .menu-item:last-child{
+.menu .menu-item:last-child {
     position: absolute;
     bottom: 2.3rem;
     width: 100%;
-
 }
 
+@media (max-width: 768px) {
+    /* Set menu-item width to 10% of the viewport width */
+    .menu-item{
+        width: 10vw;
+    }
+    .icon{
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further size reduction and adjustments for mobile */
+    .menu-item {
+        font-size: 12px; /* Slightly smaller font for smaller screens */
+        padding: 0.5rem;
+        width: 20vw; /* Expand slightly to improve visibility on small screens */
+    }
+}

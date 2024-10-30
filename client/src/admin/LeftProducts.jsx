@@ -27,7 +27,7 @@ function EnhancedTable() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5555/adminProducts");
+      const response = await fetch("https://bonmaj-backend.onrender.com/adminProducts");
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }
@@ -49,7 +49,7 @@ function EnhancedTable() {
 
   const handleDeleteProduct = async (productId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5555/adminProducts/${productId}`, {
+      const response = await fetch(`https://bonmaj-backend.onrender.com/adminProducts/${productId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -167,7 +167,7 @@ function EnhancedTable() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5555/adminProducts");
+      const response = await fetch("https://bonmaj-backend.onrender.com/adminProducts");
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }
@@ -189,7 +189,7 @@ function EnhancedTable() {
 
   const handleDeleteProduct = async (productId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5555/adminProducts/${productId}`, {
+      const response = await fetch(`https://bonmaj-backend.onrender.com/adminProducts/${productId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {

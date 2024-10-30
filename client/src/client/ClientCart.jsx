@@ -30,7 +30,7 @@ function ClientCart() {
         })
 
         try {
-            const res = await fetch('http://127.0.0.1:5555/orders', {
+            const res = await fetch('https://bonmaj-backend.onrender.com/orders', {
 
                 method: 'POST',
                 headers: {

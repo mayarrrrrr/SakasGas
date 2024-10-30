@@ -11,7 +11,7 @@ function ClientOrder() {
     const fetchOrders = async () => {
         try {
             const token = localStorage.getItem('access_token');
-            const response = await fetch("http://127.0.0.1:5555/orders", {
+            const response = await fetch("https://bonmaj-backend.onrender.com/orders", {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -29,7 +29,7 @@ function ClientOrder() {
     /*
     const fetchOrders = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5555/orders");
+            const response = await fetch("https://bonmaj-backend.onrender.com/orders");
             if (!response.ok) {
                 throw new Error('Failed to fetch orders');
             }
@@ -97,7 +97,7 @@ function ClientOrder() {
 
     const fetchOrders = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5555/orders");
+            const response = await fetch("https://bonmaj-backend.onrender.com/orders");
             if (!response.ok) {
                 throw new Error('Failed to fetch orders');
             }

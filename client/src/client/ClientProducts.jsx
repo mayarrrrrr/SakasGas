@@ -7,7 +7,7 @@ function ClientProducts(){
     const [sortOption, setSortOption] = useState('Default'); // State to hold the current sorting option
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5555/products")
+        fetch("https://bonmaj-backend.onrender.com/products")
           .then(resp => resp.json())
           .then((data) => {
             setProducts(data);

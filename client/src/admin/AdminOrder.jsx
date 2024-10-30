@@ -28,7 +28,7 @@
 
 //   const fetchOrders = async () => {
 //     try {
-//       const response = await fetch("http://127.0.0.1:5555/adminOrders");
+//       const response = await fetch("https://bonmaj-backend.onrender.com/adminOrders");
       
 //       if (!response.ok) {
 //         throw new Error('Failed to fetch orders');
@@ -168,7 +168,7 @@ function EnhancedTable() {
 
   const fetchOrders = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5555/adminOrders");
+      const response = await fetch("https://bonmaj-backend.onrender.com/adminOrders");
       if (!response.ok) {
         throw new Error('Failed to fetch orders');
       }
@@ -191,7 +191,7 @@ function EnhancedTable() {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5555/adminOrders/${orderId}`, {
+      const response = await fetch(`https://bonmaj-backend.onrender.com/adminOrders/${orderId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

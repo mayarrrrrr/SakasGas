@@ -51,7 +51,7 @@ function RightProducts() {
         e.preventDefault();
         const myFormData = { ...formData, image_url: imageUrl };
 
-        fetch('http://127.0.0.1:5555/adminProducts', {
+        fetch('https://bonmaj-backend.onrender.com/adminProducts', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

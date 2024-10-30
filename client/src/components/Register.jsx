@@ -26,7 +26,7 @@ function Register() {
 
         const { username, email, password, role } = user;
 
-        const res = await fetch('http://127.0.0.1:5555/userRegister', {
+        const res = await fetch('https://bonmaj-backend.onrender.com/userRegister', {
             method: 'POST',
             headers : {
                 'Content-Type': 'application/json'

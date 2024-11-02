@@ -1,3 +1,4 @@
+/* Main Table Styles */
 .MuiTableRow-root > * {
     padding: 10px;
 }
@@ -7,27 +8,51 @@
 }
 
 .Table td, th {
-  border: none !important;
+    border: none !important;
 }
 
-.Table:first-child{
+.Table:first-child {
     border-radius: 0.7rem !important;
-  
 }
 
-.Table h4{
+.Table h4 {
     color: #1f3e72;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-.status{
+/* Status Styles */
+.status {
     padding: 5px;
     border-radius: 7px;
 }
 
-.details{
+/* Details Column Styling */
+.details {
     color: #00b5ff !important;
 }
-  
-  
+
+/* Responsive styling for screens with a max width of 360px */
+@media (max-width: 768px) {
+    .Table{
+        overflow-x: auto; /* Enable horizontal scroll */
+        overflow-y: auto;
+        width: 85vw; /* Full-width for smaller screens */
+        height: 90vh;
+    }
+
+    /* .table {
+        width: 60vw; /* Limit table width on small screens */
+    } */
+
+    /* Header Styling Adjustment */
+    .Table h4 {
+        font-size: 1.2rem; /* Adjust title font size */
+    }
+
+    /* Cell Padding and Font Size Adjustment */
+    .MuiTableRow-root > * {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+

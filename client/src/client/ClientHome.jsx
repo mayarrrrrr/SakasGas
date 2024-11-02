@@ -175,7 +175,7 @@ function ClientHome(){
             <div className="g-wrapper">
                 <div className="paddings innerWidth g-container">
                     <div className="flexColCenter g-inner-container">
-                        <span className='primaryText'>Get Started with E-Hub</span>
+                        <span className='primaryText'>Get Started with BONMAJ</span>
                         <span className='secondaryText'>Discover unbeatable discounts on a wide range of products</span>
                         <span>Explore our extensive collection</span>
                         <button className='button'>

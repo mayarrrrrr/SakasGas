@@ -39,8 +39,8 @@ function CompactCard ({param, setExpanded}) {
             </div>
             <div className="detail">
                 <Png/>
-                <span>${param.value}</span>
-                <span>Last 24 hours</span>
+                <span className='hidden-span'>${param.value}</span>
+                <span className='hidden-span'>Last 24 hours</span>
 
             </div>
         </motion.div>
@@ -109,7 +109,7 @@ function ExpandedCard({param, setExpanded}){
             boxShadow : param.color.boxShadow
             }}
             LayoutId='expandableCard'>
-                <div style={{alignSelf:'flex-end', cursor:'pointer', color:'white'}}>
+                <div style={{alignSelf:'flex', cursor:'pointer', color:'white'}}>
                     <UilTimes onClick={setExpanded}/>
                 </div>
                 <span>{param.title}</span>

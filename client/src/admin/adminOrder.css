@@ -49,3 +49,14 @@
       padding: 6px;
     }
   }
+
+  @media (max-width: 360px){
+    .order-container .order-table table th,
+    .order-container .order-table table td {
+      font-size: 0.8rem;
+      padding: 4px;
+      
+      
+    }
+
+  }

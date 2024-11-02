@@ -4,14 +4,17 @@ import './clientOrder.css';
 function ClientOrder() {
     const [orders, setOrders] = useState([]);
 
+    
+
     useEffect(() => {
         fetchOrders();
     }, []);
     
     const fetchOrders = async () => {
+        const id = sessionStorage.getItem('email');
         try {
             const token = localStorage.getItem('access_token');
-            const response = await fetch("https://bonmaj-backend.onrender.com/orders", {
+            const response = await fetch(`https://bonmaj-backend.onrender.com/orders/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -46,7 +49,7 @@ function ClientOrder() {
             {orders.length === 0 ? (
                 <div className='no-orders'>
                     <h2>No Orders</h2>
-                    <img src="/noOrders.jpg" alt="" />
+                    <img src="./noOrders.jpg" alt="" />
                 </div>   
             ) : (
                 <div className="client-order-container">

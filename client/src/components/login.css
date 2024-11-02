@@ -134,4 +134,37 @@
       font-size: 14px;
     }
   }
+
+  @media (max-width: 420px){
+    .glass-form-container{
+      padding: 20px;
+      width:80vw;
+      
+    }
+    .form-group input{
+      padding: 5px;
+      width: 70vw;
+    }
+    .circle{
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  @media (max-width: 390px){
+    .glass-form-container{
+      padding: 10px;
+      width:80vw;
+      
+    }
+    .form-group input{
+      padding: 5px;
+      width: 70vw;
+    }
+    .circle{
+      width: 250px;
+      height: 250px;
+    }
+
+  }
   

@@ -12,6 +12,7 @@ function AdminProducts(){
                 <div className="right-products-container">
                     <RightProducts/>
                 </div>
+                
             </div>
         </div>
     )

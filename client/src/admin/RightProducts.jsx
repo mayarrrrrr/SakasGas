@@ -1,5 +1,7 @@
 import './rightProducts.css';
 import React, { useState, useRef } from 'react';
+import Alert from '@mui/material/Alert';
+
 
 function RightProducts() {
     const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ function RightProducts() {
     const [imageUrl, setImageUrl] = useState("");
     const [file, setFile] = useState(null);
     const hiddenInput = useRef(null);
+    const [showAlert, setShowAlert] = useState(false)
 
     const handleFileUpload = (e) => {
         setFile(e.target.files[0]);
@@ -40,6 +43,7 @@ function RightProducts() {
         })
         .then((item) => {
             setImageUrl(item.secure_url);
+            setShowAlert(true);
             console.log("This is the image url:", item.secure_url);
         })
         .catch(error => {
@@ -95,7 +99,9 @@ function RightProducts() {
     };
 
     return (
+       
         <div className="right-products">
+           
             <div className="right-products-form">
                 <span>Add A Product</span>
                 <form onSubmit={handleSubmit}>
@@ -115,10 +121,18 @@ function RightProducts() {
                         <label htmlFor="quantity_available">Quantity</label>
                         <input type="number" name="quantity_available" value={formData.quantity_available} onChange={handleChange} placeholder="Quantity Available" required />
                     </div>
-                    <div>
-                        <button type="button" onClick={handleButtonClick}>Upload File</button>
+                    <div >
+                        
+                                {showAlert ? (
+                            <Alert variant="filled" severity="success" className='alert'>
+                                Image uploaded successfully.</Alert>
+                        ) : (
+                            <button type="button" onClick={handleButtonClick}>Upload image</button>
+                        )}
                         <input type='file' className='hidden_field' name='file' onChange={handleFileUpload} style={{ display: 'none' }} ref={hiddenInput} />
                         <button type="submit">Add Product</button>
+                     
+            
                     </div>
                 </form>
             </div>

@@ -1,13 +1,81 @@
-.admin-products-section{
+html, body {
+    overflow: auto; /* Ensure scrolling on page */
+    height: 100%;
+}
+
+.admin-products-section {
     display: grid;
     grid-template-columns: auto 25rem;
     gap: 1rem;
+    overflow-x: auto; /* Scrollbar only if needed */
+    overflow-y: auto; /* Vertical scrollbar if content overflows */
+    height: auto; /* Allow height to adjust to content */
 }
 
-.right-products-container{
+.right-products-container {
     background-color: rgba(255, 255, 255, 0.7);
     margin-top: 3rem;
     border-radius: 30px;
-    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.64);
+    box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.64);
 }
 
+@media (max-width: 820px) {
+    .admin-products-section {
+        display: block;
+        overflow-x: auto; /* Horizontal scroll if needed */
+        overflow-y: auto; /* Vertical scroll if needed */
+        height: 100vh; /* Height adjusts to content */
+        width: auto;
+    }
+
+    .left-products-container {
+        width: 60vw;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .right-products-container {
+        /* margin-top: 10px; */
+        width: 100%; /* Ensure full width on mobile */
+         /* Keep within viewport */
+        height: 60vh;
+        /* max-height: 100vh; Prevent overflow beyond viewport */
+    }
+}
+@media (max-width: 768px) {
+    .admin-products-section {
+        display: block;
+        overflow-x: auto; /* Horizontal scroll if needed */
+        overflow-y: auto; /* Vertical scroll if needed */
+        height: 100vh; /* Height adjusts to content */
+        width: auto;
+    }
+
+    .left-products-container {
+        width: 60vw;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .right-products-container {
+        /* margin-top: 10px; */
+        width: 100%; /* Ensure full width on mobile */
+         /* Keep within viewport */
+        height: 60vh;
+        /* max-height: 100vh; Prevent overflow beyond viewport */
+    }
+}
+
+@media (max-width: 360px){
+    .left-products-container{
+        width: 83vw;
+        
+        
+    }
+    .right-products-container{
+        height: 75vh;
+        
+    }
+    
+    
+}

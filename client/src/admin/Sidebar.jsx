@@ -1,5 +1,5 @@
 import './sidebar.css'
-import {UilEstate, UilClipboardAlt, UilSignOutAlt, UilPackage, UilChart} from '@iconscout/react-unicons'
+import {UilEstate, UilClipboardAlt, UilSignOutAlt, UilPackage} from '@iconscout/react-unicons'
 import { NavLink } from 'react-router-dom'
 import {useState} from 'react'
 
@@ -14,43 +14,33 @@ function Sidebar(){
             <div className="logo">
                 {/* <img src="/e-hub logo.png" alt="" /> */}
                 <span>
-                    <span>BONMAJ</span>
+                    <span className='bakeryname'>BONMAJ</span>
                 </span>
             </div>
             {/*menu navigation*/}
             <div className="menu">
                 <div className="menu-item">
-                    <div className="icon">
-                        <UilEstate/>
-                    </div>
-                    <NavLink className="nav-link" to='/admin'>Dashboard</NavLink>  
+                    
+                    <NavLink className="nav-link" to='/admin'><UilEstate className="icon"/><span className='icon-name'>Dashboard</span></NavLink>  
                 </div>
                 <div className="menu-item ">
-                    <span>
-                        <UilClipboardAlt/>
-                    </span>
-                    <NavLink className="nav-link" to="orders">Orders</NavLink>
+                    
+                    <NavLink className="nav-link" to="orders"><UilClipboardAlt className="icon"/><span className='icon-name'>Orders</span></NavLink>
                     
                 </div>
                 <div className="menu-item">
-                    <div>
-                        <UilPackage/>
-                    </div>
-                    <NavLink className="nav-link" to="products">Products</NavLink>
+                    
+                    <NavLink className="nav-link" to="products">< UilPackage className="icon"/><span className='icon-name'>Products</span></NavLink>
                 </div>
-                <div className="menu-item">
-                    <div>
-                        <UilChart/>
-                    </div>
+                {/* <div className="menu-item"> */}
+                  
                     {/*dummy navlink*/}
-                    <NavLink className="nav-link" to="/nolink">Charts</NavLink>
+                    {/* <NavLink className="nav-link" to="/nolink"><UilChart/><span>Chart</span></NavLink>
                     
-                </div>
+                </div> */}
                 <div className="menu-item">
-                    <div>
-                        <UilSignOutAlt/>
-                    </div>
-                    <NavLink className="nav-link" to="/login">Logout</NavLink>
+                    
+                    <NavLink className="nav-link" to="/login"><UilSignOutAlt/><span>Logout</span></NavLink>
                 </div>
             </div>
         </div>

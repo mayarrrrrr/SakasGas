@@ -4,6 +4,8 @@
     position: relative;
     padding-top: 4rem;
     transition: all 300ms ease;
+    
+
 }
 
 .logo {
@@ -51,33 +53,57 @@
     border-radius: 0.7rem;
 }
 
-.menu-item > a:hover {
-    background: linear-gradient(rgb(252, 198, 111) -146.42%, rgb(246, 185, 80) -46.42%);
+/* .menu-item > a:hover {
+    background: linear-gradient(rgb(241, 240, 238) -146.42%, rgb(246, 185, 80) -46.42%);
     margin-left: 0;
     color: white;
-}
+} */
 
 .menu .menu-item:last-child {
-    position: absolute;
-    bottom: 2.3rem;
+    position: relative;
+    bottom: 0.5rem;
     width: 100%;
+}
+@media (max-width: 1024px) {
+    /* Set menu-item width to 10% of the viewport width */
+    .menu .menu-item:last-child{
+        bottom: 5vh;
+    }
+    .bakeryname{
+        margin-left: 80px;
+    }
+    /* .icon{
+        margin-left: 5px;
+        
+        
+    } */
 }
 
 @media (max-width: 768px) {
     /* Set menu-item width to 10% of the viewport width */
-    .menu-item{
+    .menu .menu-item:last-child{
+        bottom: 1vh;
+    }
+    .menu{
         width: 10vw;
     }
-    .icon{
+    .icon-name{
         display: none;
     }
+    
+    
+    /* .sidebar{
+        width: 20vw;
+    } */
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
     /* Further size reduction and adjustments for mobile */
-    .menu-item {
-        font-size: 12px; /* Slightly smaller font for smaller screens */
-        padding: 0.5rem;
-        width: 20vw; /* Expand slightly to improve visibility on small screens */
-    }
+   
+   .icon-name{
+    display: none;
+   }
+   .menu-item{
+    margin-left: 5px;
+   }
 }

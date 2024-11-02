@@ -1,7 +1,8 @@
-import { useContext, useState, useEffect } from 'react';
-import './clientCart.css';
-import { cartContext } from '../context/Context';
-import { NavLink } from "react-router-dom"
+import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { cartContext } from "../context/Context";
+import Alert from "@mui/material/Alert"; // Import the Alert component
+import "./clientCart.css";
 
 function ClientCart() {
     const globalState = useContext(cartContext);
@@ -13,47 +14,36 @@ function ClientCart() {
     const [success, setSuccess] = useState(false);
 
     const total = state.reduce((total, item) => {
-        console.log("this is the type of data", typeof item.quantity);
         return total + item.price * item.quantity;
     }, 0);
-
-    console.log("this is the total", total)
 
     const handlePlaceOrder = async () => {
         setLoading(true);
         setError(null);
         setSuccess(false);
-        
-        console.log("a string",{
-            total: total,
-            items: state.map(item => ({ id: item.id, quantity: item.quantity })),
-        })
 
         try {
-            const res = await fetch('https://bonmaj-backend.onrender.com/orders', {
-
-                method: 'POST',
+            const res = await fetch("https://bonmaj-backend.onrender.com/orders", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
-                    // Include the access token from local storage
-                    Authorization: `Bearer ${localStorage.getItem('access_token')}`, 
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
                 },
                 body: JSON.stringify({
                     total: total,
-                    items: state.map(item => ({ id: item.id, quantity: item.quantity })),
+                    items: state.map((item) => ({ id: item.id, quantity: item.quantity })),
                 }),
             });
 
             if (res.ok) {
                 setSuccess(true);
-                // Clear the cart after successful order placement
-                dispatch({ type: 'CLEAR_CART' });
+                dispatch({ type: "CLEAR_CART" });
             } else {
-                setError('Failed to place order');
+                setError("Failed to place order");
             }
         } catch (error) {
-            console.error('Error:', error);
-            setError('An error occurred while processing your request');
+            console.error("Error:", error);
+            setError("An error occurred while processing your request");
         } finally {
             setLoading(false);
         }
@@ -61,6 +51,19 @@ function ClientCart() {
 
     return (
         <div className="client-cart-page">
+            {/* Display success alert if order was successful */}
+            {success && (
+                <Alert className="top-right-alert" severity="success">
+                    Order has been received and will be worked on.
+                </Alert>
+            )}
+            {/* Display error alert if there was an error */}
+            {error && (
+                <Alert className="top-right-alert" severity="error">
+                    {error}
+                </Alert>
+            )}
+
             {state.length === 0 ? (
                 <div className="empty-cart">
                     <h2>Your cart is empty</h2>
@@ -76,45 +79,41 @@ function ClientCart() {
                             <h4>Quantity</h4>
                             <h4>Total</h4>
                         </div>
-                        {state.map((item, index) => {
-                            //item.quantity = 1
-                            console.log("this is the item", item)
-                            return (
-                                
-                                <div className="client-cart-card" key={index}>
-                                    <div className="product-details">
-                                        <img src={item.image_url} alt={item.name} />
-                                        <div className="product-name">
-                                            <p>{item.name}</p>
-                                            <button onClick={() => dispatch({ type: 'REMOVE', payload: item })}>Remove</button>
-                                        </div>   
-                                    </div>
-                                    <p>${item.price}</p>
-                                    <div className="quantity">
-                                        <button onClick={() => {
-                                            if (item.quantity > 1) {
-                                                dispatch({ type: 'DECREASE', payload: item });
-                                            } else {
-                                                dispatch({ type: 'REMOVE', payload: item });
-                                            }
-                                        }}>-</button>
-                                        <span>{item.quantity}</span>
-                                        {/*console.log("this is the quantity",item.quantity)*/}
-                                        <button onClick={() => dispatch({ type: 'INCREASE', payload: item })}>+</button>
-                                    </div>
-                                    <p className='total-price'>${item.quantity * item.price}</p>
+                        {state.map((item, index) => (
+                            <div className="client-cart-card" key={index}>
+                                <div className="product-details">
+                                    <img src={item.image_url} alt={item.name} />
+                                    <div className="product-name">
+                                        <p>{item.name}</p>
+                                        <button onClick={() => dispatch({ type: "REMOVE", payload: item })}>Remove</button>
+                                    </div>   
                                 </div>
-                            );
-                        })}
+                                <p className="price">${item.price}</p>
+                                <div className="quantity">
+                                    <button onClick={() => {
+                                        if (item.quantity > 1) {
+                                            dispatch({ type: "DECREASE", payload: item });
+                                        } else {
+                                            dispatch({ type: "REMOVE", payload: item });
+                                        }
+                                    }}>-</button>
+                                    <span>{item.quantity}</span>
+                                    <button onClick={() => dispatch({ type: "INCREASE", payload: item })}>+</button>
+                                </div>
+                                <p className="total-price">${item.quantity * item.price}</p>
+                            </div>
+                        ))}
                         <div className="total">
                             <h4>Subtotal</h4>
                             <h4>${total}</h4>
                         </div>
                         <div className="checkout-button">
-                            <button className='button' onClick={handlePlaceOrder}>Checkout</button>
+                            <button className="button" onClick={handlePlaceOrder} disabled={loading}>
+                                {loading ? "Placing Order..." : "Order"}
+                            </button>
                         </div>
                         <div className="continue-shopping">
-                            <NavLink className="client-nav-link" to='/client/products'> Continue Shopping</NavLink>
+                            <NavLink className="client-nav-link" to="/client/products">Continue Shopping</NavLink>
                         </div>
                     </div>
                 </>
@@ -124,9 +123,3 @@ function ClientCart() {
 }
 
 export default ClientCart;
-
-
-
-
-
-

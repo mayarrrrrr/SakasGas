@@ -110,11 +110,23 @@
 */
 
 @media screen and (max-width: 768px) {
+    .client-order-container{
+        display: block;
+        margin-left:0px ;
+    }
     .order-card {
         padding: 15px;
+       
     }
 
     .order-card h2 {
         font-size: 1rem;
     }
 }
+
+@media (max-width:430px){
+    .order-card{
+        width: 40vh;
+        
+    }
+} 

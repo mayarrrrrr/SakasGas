@@ -21,9 +21,11 @@
 
 }
 
-.right-products{
-    overflow: hidden;
+.right-products {
+    overflow: auto; /* Enable scrolling if content overflows */
+    max-height: 100vh; /* Prevent container from growing beyond viewport */
 }
+
   
 .right-products-form label {
     font-weight: normal;
@@ -67,3 +69,18 @@
     cursor: pointer;
     transform: scale(1.1);
 }
+
+.alert{
+    position: fixed;
+    top: 10px;
+    right: 40px;
+    z-index:1000; 
+    font-size: 0.875rem; /* Slightly smaller text size */
+    line-height: 1.2; 
+    display: flex;
+  
+   
+    
+    
+}
+

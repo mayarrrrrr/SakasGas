@@ -106,4 +106,7 @@
    .menu-item{
     margin-left: 5px;
    }
+   .bakeryname{
+    display: none;
+   }
 }

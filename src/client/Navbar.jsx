@@ -16,7 +16,7 @@ function ClientNavbar() {
         <section className='h-wrapper'>
             <div className="h-container">
                 <NavLink to="/client">
-                    <img src="/logo3.jpeg" alt="logo" width={100} height={80}  className='log'/>
+                    <img src="/logo3.jpeg" alt="logo" className='log'/>
                 </NavLink>
                 <div className="h-menu">
                     <NavLink className="client-nav-link" to='/client/products'>Products</NavLink>

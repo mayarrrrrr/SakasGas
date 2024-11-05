@@ -6,7 +6,7 @@ import {HiChatBubbleBottomCenter} from 'react-icons/hi2'
 import CountUp from 'react-countup'
 import {Swiper, SwiperSlide, useSwiper} from 'swiper/react'
 import 'swiper/css';
-import data from '../../client/slider.json'
+import data from '../../slider.json'
 import { sliderSettings } from './Common';
 import { NavLink } from 'react-router-dom'
 import {motion } from 'framer-motion'

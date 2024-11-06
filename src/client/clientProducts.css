@@ -93,4 +93,16 @@ select{
     width: 30px;
 }
 
+@media (max-width:430px){
+    .client-products-content{
+        height: 50px;
+     
+       
+       
+    }
+    .client-products-content p{
+        font-size: 15px;
+    }
+}
+
 

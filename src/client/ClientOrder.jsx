@@ -49,7 +49,7 @@ function ClientOrder() {
             {orders.length === 0 ? (
                 <div className='no-orders'>
                     <h2>No Orders</h2>
-                    <img src="./noOrders.jpg" alt="" />
+                    <img src="/noOrders.jpg" alt="" />
                 </div>   
             ) : (
                 <div className="client-order-container">

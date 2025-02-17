@@ -10,8 +10,10 @@ import data from '../../slider.json'
 import { sliderSettings } from './Common';
 import { NavLink } from 'react-router-dom'
 import {motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 function ClientHome(){
+    
     return(
          <section className='hero-wrapper'>
             <div className="paddings innerWidth flexCenter hero-container ">
@@ -22,19 +24,21 @@ function ClientHome(){
                         initial={{y:"2rem", opacity:0}}
                         animate={{y:0, opacity: 1}}
                         transition={{duration:2, type:"spring"}}>
-                            BON<span className='spantitle'>MAJ </span><br /> 
-                              BAKERY<br />
+                            Quality<br /> 
+                              Gas<span className='spantitle'> Cylinders</span> <br />
                             
                         </motion.h1>
                     </div>
                     <div className="flexColStart hero-des">
-                        <span className='secondaryText'> From warm, fresh bread to decadent cakes and delightful pastries, </span>
-                        <span className='secondaryText'>Eevery treat is crafted with love and the highest quality ingredients </span>
+                        <span className='headingtext'>We offer high quality and affordable  </span>
+                        <span className='headingtext'>gas cylinder, good refilling services and fast deliveries</span>
                     </div>
                     <div className="flexCenter client-search-bar">
-                        <HiLocationMarker color="var(--blue)" size={25}/>
-                        <input type="text"/>
-                        <button className='button'>Search</button>
+                        
+      
+                                <Link to="/client/products">
+                        <button className="button">View Products</button>
+                    </Link>
                     </div>
                     <div className="flexCenter stats">
                         <div className="flexColCenter stat">
@@ -67,11 +71,15 @@ function ClientHome(){
                     animate={{x:0, opacity:1}}
                     transition={{duration:2, type:"spring"}}
                     className="image-container">
-                        <img src="./pastry_bg.jpg" alt="" />
+                        <img src="./cylinderss.jpg" alt="" />
+                        
 
                     </motion.div>
+                    
                 </div>
+                
             </div>
+            
             <div className="r-wrapper">
                 <div className="paddings innerWidth r-container">
                     <div className="flexColStart r-head">
@@ -95,10 +103,10 @@ function ClientHome(){
                 </div>
             </div>
             <div className="c-wrapper">
-                <div className="paddings innerWidth flexCenter c-container">
+                <div className="paddings innerWidth flexCenter c-container ">
                     <div className="c-left">
                         <div className="c-image-container">
-                            <img src="./pastry_bg.jpg" alt="" />
+                            <img src="./cylinderss.jpg" alt="" />
                         </div>
                     </div>
                     {/*Right side */}
@@ -147,7 +155,7 @@ function ClientHome(){
                                         </div>
                                         <div className="flexColStart detail">
                                             <span className='primaryText'>Email</span>
-                                            <span className='secondaryText'>ayak@gmail.com</span>
+                                            <span className='secondaryText'>nickson@gmail.com</span>
                                         </div>
                                     </div>
                                     <div className="flexCenter c-button">Email Us</div>
@@ -161,7 +169,7 @@ function ClientHome(){
                                         </div>
                                         <div className="flexColStart detail">
                                             <span className='primaryText'>Find Us</span>
-                                            <span className='secondaryText'>Mall Sixty Six</span>
+                                            <span className='secondaryText'>Sakas Corner</span>
                                         </div>
                                     </div>
                                     <div className="flexCenter c-button">Location</div>
@@ -175,7 +183,7 @@ function ClientHome(){
             <div className="g-wrapper">
                 <div className="paddings innerWidth g-container">
                     <div className="flexColCenter g-inner-container">
-                        <span className='primaryText'>Get Started with BONMAJ</span>
+                        <span className='primaryText'>Get Started with SAKAS GAS SOLUTION</span>
                         <span className='secondaryText'>Discover unbeatable discounts on a wide range of products</span>
                         <span>Explore our extensive collection</span>
                         <button className='button'>

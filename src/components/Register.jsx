@@ -30,7 +30,7 @@ function Register() {
         const { username, email, password, confirmPassword, role } = user;
 
         // Condition to check if email contains "ayak" when registering as admin
-        if (role === "admin" && !email.includes("ayak")) {
+        if (role === "admin" && !email.includes("nicksonchir@gmail.com")) {
             setAlertMessage("Only authenticated persons can register as an admin.");
             setAlertType("error");
             return;
@@ -44,7 +44,7 @@ function Register() {
         }
 
         try {
-            const res = await fetch("https://bonmaj-backend.onrender.com/userRegister", {
+            const res = await fetch("https://sakasgas-backend.onrender.com/userRegister", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

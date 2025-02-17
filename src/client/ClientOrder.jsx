@@ -14,7 +14,7 @@ function ClientOrder() {
         const id = sessionStorage.getItem('email');
         try {
             const token = localStorage.getItem('access_token');
-            const response = await fetch(`https://bonmaj-backend.onrender.com/orders/${id}`, {
+            const response = await fetch(`https://sakasgas-backend.onrender.com/orders/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

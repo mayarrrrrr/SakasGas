@@ -3,6 +3,7 @@ import AdminHome from "./AdminHome";
 import Sidebar from "./Sidebar";
 import './admin.css'
 import RightSide from './RightSide'
+import AdminProducts from "./AdminProducts";
 
 function Admin() {
     const location = useLocation();
@@ -15,7 +16,7 @@ function Admin() {
             <div className="admin-app">
                 <div className="app-glass">
                     <Sidebar />
-                    {renderHomePage && <AdminHome/>}
+                    {renderHomePage && <AdminProducts/>}
                     {/*{renderRightSide && <RightSide/>} {/* Conditional rendering of RightSide */}
                     <Outlet />
                 </div>

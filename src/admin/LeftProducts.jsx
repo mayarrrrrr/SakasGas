@@ -27,7 +27,7 @@ function EnhancedTable() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("https://bonmaj-backend.onrender.com/adminProducts");
+      const response = await fetch("https://sakasgas-backend.onrender.com/products");
       if (!response.ok) throw new Error('Failed to fetch products');
       const data = await response.json();
       setAdminProducts(data);
@@ -44,7 +44,7 @@ function EnhancedTable() {
 
   const handleDeleteProduct = async (productId) => {
     try {
-      const response = await fetch(`https://bonmaj-backend.onrender.com/adminProducts/${productId}`, { method: 'DELETE' });
+      const response = await fetch(`https://sakasgas-backend.onrender.com/adminProducts/${productId}`, { method: 'DELETE' });
       if (!response.ok) throw new Error('Failed to delete product');
       setAdminProducts(adminProducts.filter(product => product.id !== productId));
     } catch (error) {
@@ -54,7 +54,7 @@ function EnhancedTable() {
 
   const handleUpdateProduct = async (productId) => {
     try {
-      const response = await fetch(`https://bonmaj-backend.onrender.com/adminProducts/${productId}`, {
+      const response = await fetch(`https://sakasgas-backend.onrender.com/adminProducts/${productId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedProductData),

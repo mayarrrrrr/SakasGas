@@ -1,6 +1,10 @@
 .h-wrapper{
-    background-image: url("/bakery_logo.jpg");
-    color: black;
+    background-image: url("reddd.jpg");
+    width: 100%;
+    
+}
+hr{
+    color: orange;
 }
 
 .h-container{
@@ -10,9 +14,16 @@
     padding-right: 5rem;
     padding-top: 2rem;
     padding-bottom: 1rem;
-    color: var(--secondary);
+    /* color: var(--secondary); */
+    
+  
+    
+    
 }
-
+.h-container input{
+    margin-top: 5px;
+    background-color: transparent;
+}
 .client-nav-link{
     text-decoration: none;
     color: chocolate;
@@ -23,10 +34,7 @@
     height:80px; 
 }
 
-
-
 .h-menu{
-   
     font-size: 20px;
 }
 
@@ -36,16 +44,11 @@
 
 .h-menu .button{
     margin-left: 30px;
-    
-    
-    
 }
 
 .button-navlink{
     color:white;
-    
 }
-
 
 .h-menu>*:hover{
     cursor: pointer;
@@ -59,15 +62,42 @@
     font-size: 14px;
     font-weight: 700;
     margin-left: 2px;
-    
 }
 
 .menu-icon{
     display: none;
 }
 
+.h-menu .absolute {
+    position: absolute; /* Ensure the list is positioned absolutely */
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: white; /* Set background color for visibility */
+    border-radius: 0.5rem; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(255, 116, 2, 0.1); /* Optional: Add shadow for depth */
+}
+
+.business_name{
+    display: flex;
+}
+
+.business_name img{
+    width: 80px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.business_name p{
+    font-family: serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    
+}
 
 @media (max-width: 540px){
+    .h-wrapper{
+        height: 120px;
+    }
     .log{
         width: 80px;
         height: 80px;
@@ -77,54 +107,59 @@
     }
     .h-container{
         justify-content: space-between;
-        padding: 45px;
-        
+        padding: 25px;
+        display: block;
+       
     }
-    .h-menu{
-        font-size: 17px;
-        position: absolute;
-        right: 0;
-        top: 25px;
-    }
-    .h-menu .button{
-        padding: 10px;
-    }
-   
-
-
-
-
-}
-
-@media (max-width: 540px){
-    .log{
+    
+    .h-container input{
         width: 100px;
-        height: 80px;
-        position: absolute;
-        top: 5px;
         left: 0;
+        top: 100px;
+        display: none;
     }
-    .h-container{
-        justify-content: space-between;
-        padding: 45px;
-        
+    .business_name{
+        left: 0px;
+    }
+   .business_name .name{
+    font-size: 19px;
+   
+   }
+    .business_name img{
+        width: 50px;
+        left: 0px;
     }
     .h-menu{
-        font-size: 17px;
+        font-size: 18px;
         position: absolute;
         right: 0;
-        top: 25px;
+        top: 34px;
+        display: block;
+      
     }
+    .h-menu .client-nav-link{
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+
+
+
     .h-menu .button{
-        padding: 10px;
+        padding: 5px;
+        margin-left: 10px;
     }
-
-
-
-
+    
 }
 
-@media (max-width: 412px){
+@media (max-width: 430px){
+    .business_name .name{
+        font-size: 17px;
+    }
+
+    .name span{
+        display: none;
+
+    }
     .log{
         width: 80px;
         height: 60px;
@@ -134,32 +169,68 @@
     }
     .h-container{
         justify-content: space-between;
-        
-        
     }
     .h-menu{
         font-size: 15px;
         position: absolute;
         right: 0;
-        top: 25px;
-        
+        top: 30 px;
     }
     .h-menu .client-nav-link{
         margin: 5px;
     }
     .h-menu .button{
         padding: 5px;
-      
     }
     .h-menu svg{
         width: 30px;
-
     }
     .bag-quantity{
         padding: 2px;
         background-color: orange;
         border-radius: 50%;
         width: 15px;
+        height: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 360px){
+    .log{
+        width: 80px;
+        height: 60px;
+        position: absolute;
+        top: 15px;
+        left: 0;
+    }
+    .h-container{
+        justify-content: space-between;
+    }
+    .h-menu{
+        font-size: 15px;
+        position: absolute;
+        right: 0;
+        top: 25px;
+    }
+    .h-menu .client-nav-link{
+        margin: 5px;
+    }
+    .h-menu .button{
+        padding: 5px;
+    }
+    .h-menu svg{
+        width: 30px;
+    }
+    .bag-quantity{
+        padding: 2px;
+        background-color: orange;
+        border-radius: 50%;
+        width: 15px;
+        height: 20px;
+        font-size: 13px;
+        font-weight: 700;
         height: 20px;
         font-size: 13px;
         font-weight: 700;

@@ -20,17 +20,17 @@ function App() {
       <Routes>
         <Route path='/register' element={<DynamicRoute element={Register} title="Sign Up " />}>Register</Route>
         <Route path='/login' element={<DynamicRoute element={Login} title="Sign In" />} ></Route>
-        <Route path='/admin' element={<DynamicRoute element={Admin} title="BONMAJ||Admin" />}>
-          <Route path='orders' element={<DynamicRoute element={AdminOrder} title="BONMAJ||Orders" />} ></Route>
-          <Route path='products' element={<DynamicRoute element={AdminProducts} title="BONMAJ||Products" />} ></Route>
+        <Route path='/admin' element={<DynamicRoute element={Admin} title="Sakasgas||Admin" />}>
+          <Route path='orders' element={<DynamicRoute element={AdminOrder} title="Sakasgas||Orders" />} ></Route>
+          <Route path='products' element={<DynamicRoute element={AdminProducts} title="Sakasgas||Products" />} ></Route>
         </Route>
-        <Route path='/client' element={<DynamicRoute element={Client} title="BONMAJ||Home" />} >
-          <Route path="products" element={<DynamicRoute element={ClientProducts} title="BONMAJ||Products" />} />
+        <Route path='/client' element={<DynamicRoute element={Client} title="Sakasgas||Home" />} >
+          <Route path="products" element={<DynamicRoute element={ClientProducts} title="Sakasgas||Products" />} />
           <Route path="cart" element={<DynamicRoute element={ClientCart} title="Shopping Cart" />}  />
           <Route path="order" element={<DynamicRoute element={ClientOrder} title="Orders" />}  />
           {/*add logout*/}
         </Route>
-        <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/client" />} />
       </Routes>
     </div>
     </>

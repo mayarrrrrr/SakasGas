@@ -54,7 +54,7 @@ function ClientCart() {
             {/* Display success alert if order was successful */}
             {success && (
                 <Alert className="top-right-alert" severity="success">
-                    Order has been received and will be worked on.
+                    Call 0795942191 for delivery.
                 </Alert>
             )}
             {/* Display error alert if there was an error */}
@@ -100,12 +100,12 @@ function ClientCart() {
                                     <span>{item.quantity}</span>
                                     <button onClick={() => dispatch({ type: "INCREASE", payload: item })}>+</button>
                                 </div>
-                                <p className="total-price">${item.quantity * item.price}</p>
+                                <p className="total-price">Sh {item.quantity * item.price}</p>
                             </div>
                         ))}
                         <div className="total">
                             <h4>Subtotal</h4>
-                            <h4>${total}</h4>
+                            <h4>Sh {total}</h4>
                         </div>
                         <div className="checkout-button">
                             <button className="button" onClick={handlePlaceOrder} disabled={loading}>

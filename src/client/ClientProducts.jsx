@@ -7,7 +7,7 @@ function ClientProducts(){
     const [sortOption, setSortOption] = useState('Default'); // State to hold the current sorting option
 
     useEffect(() => {
-        fetch("https://bonmaj-backend.onrender.com/products")
+        fetch("https://sakasgas-backend.onrender.com/products")
           .then(resp => resp.json())
           .then((data) => {
             setProducts(data);
@@ -64,12 +64,12 @@ function ClientProducts(){
                     <div className="flexColStart p-card" key={product.id}>
                         <img className="productsimage"src={product.image_url} alt="category"/>
                         <span className="secondaryText p-price">
-                            <span style={{color:"orange"}}>$</span>
-                            <span>{product.price}</span>
+                            <span style={{color:"orange"}}>Sh </span>
+                            <span>{product.price}: 6kgs</span>
                         </span>
                         <span className='primaryText'>{product.name}</span>
                         <span className='secondaryText'>{product.description}</span>
-                        <button className="p-buttons" onClick={() => dispatch({type:'ADD', payload:product})}>Add to cart</button>
+                        <button className="p-buttons" onClick={() => dispatch({type:'ADD', payload:product})}>Order</button>
                     </div>
                 ))}
             </div>

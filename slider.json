@@ -1,33 +1,38 @@
 [
     {
-      "category": "Bread",
-      "image": "https://www.rotellasbakery.com/wp-content/uploads/2014/12/slide1-bg.jpg",
+      "category": "Pro gas",
+      "image": "https://gobeba.com/wp-content/uploads/2019/09/IMG_0176.jpg",
       "description": "Freshly baked bread"
     },
     {
-      "category": "Cakes",
-      "image": "https://i.pinimg.com/564x/d4/dc/ed/d4dced1af80b34bcd85313bab51a4202.jpg",
+      "category": "K gas",
+      "image": "https://gobeba.com/wp-content/uploads/2019/03/IMG_0174-1.jpg",
       "description": "Freshly baked cakes"
     },
     {
-        "category": "Beans(Foul) ",
-        "image": "https://i.pinimg.com/564x/1d/67/7d/1d677d1f130a9b93b2ee2810a23544cc.jpg",
+        "category": "Mpishi Ola ",
+        "image": "https://gobeba.com/wp-content/uploads/2019/03/IMG_0175-1.jpg",
         "description": "Fava Beans"
       },
     {
-      "category": "Peanut",
-      "image": "https://i.pinimg.com/564x/95/8a/29/958a2983e1761003acf6fb8ee58ab336.jpg",
+      "category": "Top gas",
+      "image": "https://sokopema.com/wp-content/uploads/2024/10/131.png",
       "description": "Smooth homemade peanut butter"
     },
     
     {
-      "category": "Custard",
-      "image": "https://www.topserveltd.co.ke/_next/image?url=https%3A%2F%2Fapp.topserveltd.co.ke%2Fimage%2Fcatalog%2Fproducts%2FZESTA-CUSTARD-POWDER-250G.jpg&w=1200&q=75  ",
+      "category": "Hashi gas",
+      "image": "https://gobeba.com/wp-content/uploads/2020/02/IMG_0190.jpg ",
       "description": "Zesta custard powder"
     },
     {
-      "category": "Macaroni",
-      "image": "https://i.pinimg.com/564x/a0/52/ad/a052ad03995f0e5ef18775ce18f19503.jpg",
+      "category": "National gas",
+      "image": "https://mamagas.co.ke/wp-content/uploads/2024/12/8.png",
+      "description": "Macaroni"
+    },
+    {
+      "category": "Afri gas",
+      "image": "https://gobeba.com/wp-content/uploads/2019/03/IMG_0170.jpg",
       "description": "Macaroni"
     }
   ]
